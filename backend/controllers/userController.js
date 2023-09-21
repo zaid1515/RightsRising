@@ -18,9 +18,6 @@ const registerUser = asyncHandler(async (req, res) => {
     const userExits = await User.findOne({ email: email });
     if (userExits) {
         throw new Error(`User already exist.`);
-        // return res.status(200).json({
-        //     error : `Email: ${email} is already in use.`,
-        // })
     }
 
     const user = await User.create({
