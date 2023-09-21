@@ -10,7 +10,6 @@ const generateToken = require("../utils/generateToken");
 const registerUser = asyncHandler(async (req, res) => {
 
     const { username, email, password } = req.body;
-    console.log(req.body);
 
     if (!username || !email || !password) {
         throw new Error(`All fields are required.`);
@@ -19,6 +18,9 @@ const registerUser = asyncHandler(async (req, res) => {
     const userExits = await User.findOne({ email: email });
     if (userExits) {
         throw new Error(`User already exist.`);
+        // return res.status(200).json({
+        //     error : `Email: ${email} is already in use.`,
+        // })
     }
 
     const user = await User.create({
@@ -37,7 +39,7 @@ const registerUser = asyncHandler(async (req, res) => {
         });
     } else {
         res.status(400);
-        throw new Error(`Invalid user data.`);
+        throw new Error(`Invalid user data.`,{statusCode : 400});
     }
 
     /*

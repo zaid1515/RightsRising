@@ -60,11 +60,23 @@ const RegsiterPage = () => {
                 const response = await axios.post('/api/users/', formData)
                 console.log(response);
 
-                if(response.status === 201){
-                    navigate('/registrationsuccess')
+                if(response.status === 201){ 
+                    /*
+                    here add a registeration successfull page, this page will contain registered successfully text and  a button with link to go to the sign-in page. and a and navigate to that page by using 
+                    "navigate('/registrationsuccess')" add the protectd routes that user cannot access the
+                    registrationsuccess page directly without registering. 
+                    @vighnesh and @abuzaid.
+                    */
+                    console.log(`registered Successfully`);
                 }
             } catch(error){
-                console.log(error);
+                if(!error.response){
+                    console.log(error);
+                } else {
+                    console.log(error.response.data.message);
+                    // if the user submits a email that already has an account then add a pop-up component down below.
+                    // @vighnesh and @abuzaid. 
+                }
             }
         } else {
             setValidationErrors(errors);
