@@ -3,8 +3,10 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 import FormContainer from '../components/FormContainer';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import FormGroup from "../components/FormFields";
 
 const LoginPage = () => {
+    const [loginValidationErrors, setLoginValidationErrors] = useState({});
     const [loginForm, setLoginForm] = useState({
         email: "", 
         password: "",
@@ -47,9 +49,18 @@ const LoginPage = () => {
             try{
                 const response = await axios.post('/api/users/auth', loginForm);
                 console.log(response);
-            } catch(err){
-                console.log()
+            } catch(error){
+                if(!error.response){
+                    console.log(error);
+                } else {
+                    console.log('here1')
+                    console.log(error.response.data);
+                    // if the user submits a email that already has an account then add a pop-up component down below.
+                    // @vighnesh and @abuzaid. 
+                }
             }
+        } else {
+            setLoginValidationErrors(errors);
         }
     }
 
@@ -58,38 +69,40 @@ const LoginPage = () => {
     <FormContainer>
         <h1>Sign In</h1>
 
-        <Form>
-            <Form.Group className="my-2" controlId="email">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control
-                    type="email"
-                    placeholder="Enter Email"
-                    value={email}
-                    name="email"
-                    onChange={handleChange}
-                ></Form.Control>
-            </Form.Group>
+        <Form onSubmit={loginSubmitHandler}>
 
-            <Form.Group className="my-2" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                    type="password"
-                    placeholder="Enter Password"
-                    value={password}
-                    name="password"
-                    onChange={handleChange}
-                ></Form.Control>
-            </Form.Group>
+        <FormGroup 
+            controlId='email'
+            label='Email Address'
+            type='email'
+            placeholder='Enter Email'
+            value={email}
+            name='email'
+            onChange={handleChange}
+            error={loginValidationErrors.email}   
+        />
 
-            <Button type="submit" variant="primary" className="mt-3" >
-                Sign In
-            </Button>
+        <FormGroup 
+            controlId='password'
+            label='Password'
+            type='password'
+            placeholder='Enter Password'
+            value={password}
+            name='password'
+            onChange={handleChange}
+            error={loginValidationErrors.password}   
+        />
 
-            <Row className="py-3" >
-                <Col>
-                    New Customer <Link to='/register' >Register</Link>
-                </Col>
-            </Row>
+        <Button type="submit" variant="primary" className="mt-3" >
+            Sign In
+        </Button>
+
+        <Row className="py-3" >
+            <Col>
+                New Customer <Link to='/register' >Register</Link>
+            </Col>
+        </Row>
+
         </Form>
     </FormContainer>
     );

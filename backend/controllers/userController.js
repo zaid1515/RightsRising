@@ -31,7 +31,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     if (user) {
         generateToken(res, user._id);
-        res.status(201).json({
+        res.status(200).json({
         // _id: user.id,
         // username: user.username,
         // email: user.email,
@@ -39,7 +39,7 @@ const registerUser = asyncHandler(async (req, res) => {
         });
     } else {
         res.status(400);
-        throw new Error(`Invalid user data.`,{statusCode : 400});
+        throw new Error(`Invalid user data.`);
     }
 
     /*
@@ -71,7 +71,7 @@ const authUser = asyncHandler(async (req, res) => {
 
     if (user && (await user.matchPasswords(password))) {
         generateToken(res, user._id);
-        res.status(201).json({
+        res.status(200).json({
             _id: user.id,
             username: user.username,
             email: user.email,

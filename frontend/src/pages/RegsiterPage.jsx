@@ -3,6 +3,7 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 import FormContainer from "../components/FormContainer";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import FormGroup from "../components/FormFields";
 
 const RegsiterPage = () => {
 
@@ -88,75 +89,60 @@ const RegsiterPage = () => {
             <h1>Sign Up</h1>
 
             <Form onSubmit={submitHandler}>
-            <Form.Group className="my-2" controlId="username">
-                <Form.Label>Username</Form.Label>
-                <Form.Control
-                type="text"
-                placeholder="Enter Name"
-                name="username"
-                value={username}
-                onChange={handleChange}
-                >
-                </Form.Control>
-                {validationErrors.username && (
-                    <p className="text-danger">{validationErrors.username}</p>
-                )}
-            </Form.Group>
 
-            <Form.Group className="my-2" controlId="email">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control
-                type="email"
-                placeholder="Enter Email"
-                value={email}
-                name="email"
-                onChange={handleChange}
-                >
-                </Form.Control>
-                {validationErrors.email && (
-                    <p className="text-danger">{validationErrors.email}</p>
-                )}
-            </Form.Group>
+                <FormGroup 
+                    controlId='username'
+                    label='username'
+                    type='text'
+                    placeholder='Enter Name'
+                    name='username'
+                    value={username}
+                    onChange={handleChange}
+                    error={validationErrors.username}
+                />
 
-            <Form.Group className="my-2" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                type="password"
-                placeholder="Enter Password"
-                value={password}
-                name="password"
-                onChange={handleChange}
-                >
-                </Form.Control>
-                {validationErrors.password && (
-                    <p className="text-danger">{validationErrors.password}</p>
-                )}
-            </Form.Group>
+                <FormGroup 
+                    controlId='email'
+                    label='Email Address'
+                    type='email'
+                    placeholder='Enter Email'
+                    name='email'
+                    value={email}
+                    onChange={handleChange}
+                    error={validationErrors.email}
+                />
 
-            <Form.Group className="my-2" controlId="confirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                type="password"
-                placeholder="Confirm"
-                value={confirmPassword}
-                name="confirmPassword"
-                onChange={handleChange}
-                >
-                </Form.Control>
-                {validationErrors.confirmPassword && (
-                    <p className="text-danger">{validationErrors.confirmPassword}</p>
-                )}
-            </Form.Group>
+                <FormGroup 
+                    controlId='password'
+                    label='Enter Password'
+                    type='password'
+                    placeholder='password'
+                    name='password'
+                    value={password}
+                    onChange={handleChange}
+                    error={validationErrors.password}
+                />
 
-            <Button type="submit" variant="primary" className="mt-3">
-                Sign Up
-            </Button>
+                <FormGroup 
+                    controlId='confirmPassword'
+                    label='Confirm Password'
+                    type='password'
+                    placeholder='confirm'
+                    name='confirmPassword'
+                    value={confirmPassword}
+                    onChange={handleChange}
+                    error={validationErrors.confirmPassword}
+                />
 
-            <Row className="py-3">
-                <Col>
-                Already Have An Account? <Link to="/login">Login</Link>
-                </Col>
-            </Row>
+                <Button type="submit" variant="primary" className="mt-3">
+                    Sign Up
+                </Button>
+
+                <Row className="py-3">
+                    <Col>
+                    Already Have An Account? <Link to="/login">Login</Link>
+                    </Col>
+                </Row>
             </Form>
         </FormContainer>
     );
