@@ -52,7 +52,7 @@ const authNgo = asyncHandler( async(req, res) => {
     const ngo = await Ngo.findOne({email});
 
     if(ngo && (await ngo.matchPasswords(password))){
-        generateToken(res, ngo._id);
+        generateToken(res, ngo._id, ngo.role);
         res.status(200).json({
             _id : ngo._id,
             name : ngo.name,
