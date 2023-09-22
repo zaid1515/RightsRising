@@ -9,9 +9,9 @@ const generateToken = require("../utils/generateToken");
 */
 const registerUser = asyncHandler(async (req, res) => {
 
-    const { username, email, password } = req.body;
+    const { username, email, password, age } = req.body;
 
-    if (!username || !email || !password) {
+    if (!username || !email || !password || !age) {
         throw new Error(`All fields are required.`);
     }
 
@@ -24,6 +24,7 @@ const registerUser = asyncHandler(async (req, res) => {
         username,
         email,
         password,
+        age,
     });
 
     if (user) {
@@ -72,6 +73,7 @@ const authUser = asyncHandler(async (req, res) => {
             _id: user.id,
             username: user.username,
             email: user.email,
+            age : user.age,
         });
     } else {
         res.status(401);
@@ -106,6 +108,7 @@ const getUserPorfile = asyncHandler(async (req, res) => {
         _id : req.user._id,
         username : req.user.username,
         email : req.user.email,
+        age : req.user.age
     }
 
     res.status(201).json(user);
