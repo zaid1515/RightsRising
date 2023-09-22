@@ -27,7 +27,7 @@ const registerUser = asyncHandler(async (req, res) => {
     });
 
     if (user) {
-        generateToken(res, user._id);
+        // generateToken(res, user._id);
         res.status(200).json({
         // _id: user.id,
         // username: user.username,
@@ -88,6 +88,7 @@ const logoutUser = asyncHandler(async (req, res) => {
     res.cookie('jwt', '', {
         httpOnly : true,
         expires   : new Date(0), 
+        path : '/'
     })
 
     res.status(201).json({
@@ -116,8 +117,6 @@ const getUserPorfile = asyncHandler(async (req, res) => {
 @ access : private 
 */
 const updateUserProfile = asyncHandler(async (req, res) => {
-    console.log(req.body);
-    console.log(req.user);
     const user = await User.findById(req.user._id);
 
     if(user){
