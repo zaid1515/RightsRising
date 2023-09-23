@@ -5,6 +5,11 @@ const Ngo = require('../models/ngoModel');
 
 require('dotenv').config();
 
+/*
+@Desc : get the role and state for the website
+@Route : GET /
+@access : public
+*/  
 const getRole = asyncHandler( async(req, res) => {
     let token = req.cookies.jwt;
 
