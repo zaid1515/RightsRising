@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import FormGroup from "../components/FormFields";
 
-const LoginPage = () => {
+const NgoLoginPage = () => {
     const navigate = useNavigate();
     const [loginValidationErrors, setLoginValidationErrors] = useState({});
     const [loginForm, setLoginForm] = useState({
@@ -48,7 +48,7 @@ const LoginPage = () => {
 
         if(Object.keys(errors).length === 0){
             try{
-                const response = await axios.post('/api/users/auth', loginForm);
+                const response = await axios.post('/api/ngo/auth', loginForm);
                 console.log(response);
 
                 if(response.status === 200){
@@ -114,4 +114,4 @@ const LoginPage = () => {
     );
 }
 
-export default LoginPage
+export default NgoLoginPage;

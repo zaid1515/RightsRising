@@ -12,6 +12,8 @@ import HomePage from './pages/HomePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegsiterPage from './pages/RegsiterPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import NgoRgister from './pages/NgoRegisterPage.jsx';
+import NgoLoginPage from './pages/ngoLogin.jsx';
 // import store from './Store.js';
 // import { Provider } from 'react-redux';
 
@@ -22,9 +24,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />} >
       <Route index path='/' element={<HomePage />} />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/register' element={<RegsiterPage />} />
-      <Route path='/profile' element={<ProfilePage />} />
+      <Route exact path='/login' element={<LoginPage />} />
+      <Route exact path='/register' element={<RegsiterPage />} />
+      <Route exact path="/registerngo" element={<NgoRgister />} />
+      <Route exact path='/ngologin' element={<NgoLoginPage />} />
+      <Route exact path='/profile' element={<ProfilePage />} />
     </Route>
   )
 )

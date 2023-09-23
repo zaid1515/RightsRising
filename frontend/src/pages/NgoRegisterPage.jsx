@@ -5,19 +5,18 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import FormGroup from "../components/FormFields";
 
-const RegsiterPage = () => {
+const NgoRgister = () => {
 
     const navigate = useNavigate();
     const [validationErrors, setValidationErrors] = useState({});
     const [formData, setFormData] = useState({
-        username : '',
+        name : '',
         email : '',
         password : '',
         confirmPassword : '',
-        age : ''
     });
 
-    const { username, email, age, password, confirmPassword } = formData;
+    const { name, email, password, confirmPassword } = formData;
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -30,19 +29,15 @@ const RegsiterPage = () => {
     const validateForm = () => {
         const errors = {};
 
-        if(!username.trim()){
-            errors.username = `Username is required.`
+        if(!name.trim()){
+            errors.name = `name is required.`
         }
 
         if (!email.trim()) {
             errors.email = "Email is required";
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             errors.email = "Invalid email format";
-        }
-
-        if(!age){
-            errors.age = `Please provide the age`;
-        }
+        }  
 
         if (!password.trim()) {
             errors.password = "Password is required";
@@ -63,7 +58,7 @@ const RegsiterPage = () => {
         if(Object.keys(errors).length === 0){
             // Form is valid proceed with regsitration.
             try{
-                const response = await axios.post('/api/users/', formData)
+                const response = await axios.post('/api/ngo/', formData)
                 console.log(response);
 
                 if(response.status === 200){ 
@@ -73,8 +68,7 @@ const RegsiterPage = () => {
                     registrationsuccess page directly without registering. 
                     @vighnesh and @abuzaid.
                     */
-                    console.log(`registered Successfully`);
-                    navigate('/login');
+                    navigate('/ngologin');
                 }
             } catch(error){
                 if(!error.response){
@@ -97,14 +91,14 @@ const RegsiterPage = () => {
             <Form onSubmit={submitHandler}>
 
                 <FormGroup 
-                    controlId='username'
-                    label='username'
+                    controlId='name'
+                    label='name'
                     type='text'
                     placeholder='Enter Name'
-                    name='username'
-                    value={username}
+                    name='name'
+                    value={name}
                     onChange={handleChange}
-                    error={validationErrors.username}
+                    error={validationErrors.name}
                 />
 
                 <FormGroup 
@@ -116,17 +110,6 @@ const RegsiterPage = () => {
                     value={email}
                     onChange={handleChange}
                     error={validationErrors.email}
-                />
-
-                <FormGroup 
-                    controlId='age'
-                    label='age'
-                    type='number'
-                    placeholder='age'
-                    name='age'
-                    value={age}
-                    onChange={handleChange}
-                    error={validationErrors.age}
                 />
 
                 <FormGroup 
@@ -165,4 +148,4 @@ const RegsiterPage = () => {
     );
 };
 
-export default RegsiterPage;
+export default NgoRgister;
