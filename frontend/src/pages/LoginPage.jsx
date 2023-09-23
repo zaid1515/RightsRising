@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import FormContainer from '../components/FormContainer';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import FormGroup from "../components/FormFields";
+import { UserContext } from "../userContext";
 
 const LoginPage = () => {
+    const userContext = useContext(UserContext);
+    const {userInfo, setUserInfo} = userContext;
     const navigate = useNavigate();
     const [loginValidationErrors, setLoginValidationErrors] = useState({});
     const [loginForm, setLoginForm] = useState({
@@ -49,10 +52,11 @@ const LoginPage = () => {
         if(Object.keys(errors).length === 0){
             try{
                 const response = await axios.post('/api/users/auth', loginForm);
-                console.log(response);
+                console.log(response.data);
 
                 if(response.status === 200){
                     console.log('authenticated successfully');
+                    setUserInfo(response.data);
                     navigate('/');
                 }
             } catch(error){

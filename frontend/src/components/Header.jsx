@@ -1,46 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt } from  'react-icons/fa';
 import axios from "axios";
+import { UserContext} from "../userContext";
+import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
+    const { userInfo, setUserInfo } = useContext(UserContext);
+    const navigate = useNavigate();
 
-    const [currState, setCurrState] = useState(null);
-
-    const getState = async() => {
-        try{
-            const response = await axios.get('http://localhost:3000/', {withCredentials : true});
-            setCurrState(response.data)
-        }catch(err){
+    const getState = async () => {
+        try {
+            const response = await axios.get('http://localhost:3000/', { withCredentials: true });
+            console.log(response.data)
+            setUserInfo(response.data);
+        } catch (err) {
             console.log(err);
         }
     }
 
-    useEffect( () => {
-            getState();
+    useEffect(() => {
+        getState();
     }, []);
 
-    const handleLogout = async(e, role) => {
+    const handleLogout = async (e, role) => {
         e.preventDefault();
         let path;
-        if(role === 0 || role === '0'){
+        if (role === 0 || role === '0') {
             path = `/api/users/logout`;
-        } else{
+        } else {
             path = `/api/ngo/logout`;
         }
 
-        try{
-            const res = await axios.post(path, {withCredentials : true});
-            setCurrState(null);
-        }catch(err){
+        try {
+            const res = await axios.post(path, { withCredentials: true });
+            console.log(res.data);
+            setUserInfo(null);
+            navigate('/');
+            getState();
+        } catch (err) {
             console.log(err);
         }
     }
-
-    useEffect( () => {
-            getState();
-    }, [handleLogout]);
 
     return (
         <header>
@@ -49,25 +51,30 @@ const Header = () => {
                     <Navbar.Brand href="/">MERN APP</Navbar.Brand>
                     <Navbar.Toggle aria-current="basic-navbar-nav" /> 
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            {currState && (
+                        <Nav className="ms-auto">                         
+                            {userInfo ? (
                                 <>
-                                {   currState.role === 3 &&                           
+                                    {userInfo.role === 3 && (
+                                        <Nav.Link href="/login">
+                                            <FaSignInAlt /> Sign In
+                                        </Nav.Link>
+                                    )}
+                                    {userInfo.role === 1 && (
+                                        <Nav.Link href="/createpost">
+                                            <FaSignInAlt /> Create Post
+                                        </Nav.Link>
+                                    )}
+                                    {userInfo.role !== 3 && (
+                                        <Nav.Link href="/login" onClick={(e) => handleLogout(e, userInfo.role)}>
+                                            <FaSignOutAlt /> Sign Out
+                                        </Nav.Link>
+                                    )}
+                                </>
+                            ) : (
+                                // Show the "Sign In" link only if userInfo is not available
                                 <Nav.Link href="/login">
                                     <FaSignInAlt /> Sign In
                                 </Nav.Link>
-                                }
-                                {    currState.role === 1 &&                           
-                                <Nav.Link href="/create">
-                                    <FaSignInAlt /> Create Post
-                                </Nav.Link>
-                                }
-                                {   currState.role !==3 &&
-                                <Nav.Link href="/login" onClick={(e) => handleLogout(e, currState.role)}>
-                                    <FaSignOutAlt /> Sign Out
-                                </Nav.Link>
-                                }
-                                </>
                             )}
                         </Nav>
                     </Navbar.Collapse>

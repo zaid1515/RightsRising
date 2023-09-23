@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import FormContainer from '../components/FormContainer';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import FormGroup from "../components/FormFields";
+import { UserContext } from "../userContext";
 
 const NgoLoginPage = () => {
+    const userContext = useContext(UserContext);
+    const {userInfo, setUserInfo} = userContext;
     const navigate = useNavigate();
     const [loginValidationErrors, setLoginValidationErrors] = useState({});
     const [loginForm, setLoginForm] = useState({
@@ -53,13 +56,13 @@ const NgoLoginPage = () => {
 
                 if(response.status === 200){
                     console.log('authenticated successfully');
+                    setUserInfo(response.data);
                     navigate('/');
                 }
             } catch(error){
                 if(!error.response){
                     console.log(error);
                 } else {
-                    console.log('here1')
                     console.log(error.response.data);
                     // if the user submits a email that already has an account then add a pop-up component down below.
                     // @vighnesh and @abuzaid. 
