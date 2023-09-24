@@ -5,6 +5,7 @@ const errorMiddleware = require('./middleware/errorMiddleware');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const corsOptions = require('./config/corsOption');
+const fs = require('fs');
 
 require('dotenv').config();
 
@@ -24,6 +25,7 @@ app.use(cookieparser());
 app.use('/', require('./Routes/homeRoutes'));
 app.use('/api/users', require('./Routes/userRoutes'));
 app.use('/api/ngo', require('./Routes/ngoRoutes'));
+app.use('/api/blogs', require('./Routes/blogsRoutes'));
 
 
 app.use(errorMiddleware.notFound);
@@ -36,6 +38,11 @@ mongoose.connection.once('open', () => {
     app.listen(port, ()=>{
         console.log(`Server is running at http://localhost:${port}`);
     });
+
+    if(!fs.existsSync('./uploads')){
+        fs.mkdirSync('./uploads');
+        console.log('uploads folder created.');
+    }
 })
 
 mongoose.connection.on('error', (err) => {
