@@ -3,26 +3,11 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt } from  'react-icons/fa';
 import axios from "axios";
 import { UserContext} from "../userContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Header = () => {
     const { userInfo, setUserInfo } = useContext(UserContext);
-    const navigate = useNavigate();
-
-    const getState = async () => {
-        try {
-            const response = await axios.get('http://localhost:3000/', { withCredentials: true });
-            console.log(response.data)
-            setUserInfo(response.data);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    useEffect(() => {
-        getState();
-    }, []);
 
     const handleLogout = async (e, role) => {
         e.preventDefault();

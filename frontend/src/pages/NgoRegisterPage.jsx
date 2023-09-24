@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import FormGroup from "../components/FormFields";
 
-const NgoRgister = () => {
+const NgoRegister = () => {
 
     const navigate = useNavigate();
     const [validationErrors, setValidationErrors] = useState({});
@@ -148,4 +148,4 @@ const NgoRgister = () => {
     );
 };
 
-export default NgoRgister;
+export default NgoRegister;

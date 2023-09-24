@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import FormGroup from "../components/FormFields";
 
-const RegsiterPage = () => {
+const RegisterPage = () => {
 
     const navigate = useNavigate();
     const [validationErrors, setValidationErrors] = useState({});
@@ -165,4 +165,4 @@ const RegsiterPage = () => {
     );
 };
 
-export default RegsiterPage;
+export default RegisterPage;
