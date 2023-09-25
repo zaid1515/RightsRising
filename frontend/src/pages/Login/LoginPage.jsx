@@ -1,9 +1,13 @@
-import { useContext, useState } from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
-import FormContainer from "../../components/FormContainer";
-import { Link, useNavigate} from "react-router-dom";
-import FormGroup from "../../components/FormFields";
+// import { useContext, useState } from "react";
+// // import { Form, Button, Col, Row } from "react-bootstrap";
+// import FormContainer from "../../components/FormContainer";
+// import { Link, useNavigate} from "react-router-dom";
+// import FormGroup from "../../components/FormFields";
 import { AuthContext } from "../../hooks/authContext";
+import React, { useContext, useState } from "react";
+import loginimg from "../../images/login-pic2.jpg";
+import { NavLink, useNavigate } from "react-router-dom";
+import "./Login.css";
 
 const LoginPage = () => {
 
@@ -64,43 +68,87 @@ const LoginPage = () => {
   };
 
   return (
-    <FormContainer>
-      <h1>Sign In</h1>
+    // <FormContainer>
+    //   <h1>Sign In</h1>
 
-      <Form onSubmit={loginSubmitHandler}>
-        <FormGroup
-          controlId="email"
-          label="Email Address"
+    //   <Form onSubmit={loginSubmitHandler}>
+    //     <FormGroup
+    //       controlId="email"
+    //       label="Email Address"
+    //       type="email"
+    //       placeholder="Enter Email"
+    //       value={email}
+    //       name="email"
+    //       onChange={handleChange}
+    //       error={loginValidationErrors.email}
+    //     />
+
+    //     <FormGroup
+    //       controlId="password"
+    //       label="Password"
+    //       type="password"
+    //       placeholder="Enter Password"
+    //       value={password}
+    //       name="password"
+    //       onChange={handleChange}
+    //       error={loginValidationErrors.password}
+    //     />
+
+    //     <Button type="submit" variant="primary" className="mt-3">
+    //       Sign In
+    //     </Button>
+
+    //     <Row className="py-3">
+    //       <Col>
+    //         New Customer <Link to="/register">Register</Link>
+    //       </Col>
+    //     </Row>
+    //   </Form>
+    // </FormContainer>
+
+<div className="loginContainer">
+<div className="loginWrapper">
+  <div className="imgcol">
+    <img src={loginimg} alt="login img" className="login-img" />
+  </div>
+  <div className="formContainer">
+    <div>
+      <h2>Welcome Back!! SIGN UP</h2>
+    </div>
+    <hr></hr>
+    <form onSubmit={loginSubmitHandler} className="loginForm">
+      <div className="col-sm-10">
+        <input
           type="email"
-          placeholder="Enter Email"
-          value={email}
+          className="signupItem"
+          id="signupEmail"
           name="email"
+          value={email}
           onChange={handleChange}
-          error={loginValidationErrors.email}
+          placeholder="Email"
+          required
         />
+      </div>
 
-        <FormGroup
-          controlId="password"
-          label="Password"
+      <div className="col-sm-10">
+        <input
           type="password"
-          placeholder="Enter Password"
-          value={password}
+          className="signupItem"
+          id="signupPass"
           name="password"
+          value={password}
+          placeholder="Password"
           onChange={handleChange}
-          error={loginValidationErrors.password}
+          required
         />
+      </div>
 
-        <Button type="submit" variant="primary" className="mt-3">
-          Sign In
-        </Button>
-
-        <Row className="py-3">
-          <Col>
-            New Customer <Link to="/register">Register</Link>
-          </Col>
-        </Row>
-      </Form>
-    </FormContainer>
+      <button className="signupSubmit" type="submit">Sign Up</button>
+    </form>
+    <p>Dont have an account? <span ><NavLink to={"/register"} className="link">Sign Up</NavLink></span></p> 
+  </div>
+</div>
+</div>
   );
 };
 

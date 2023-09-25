@@ -16,20 +16,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* Public Routes */}
-          <Route exact index element={<HomePage />} />
+          {/* <Route exact index element={<HomePage />} /> */}
           <Route exact path="/login" element={<LoginPage />} />
-          <Route exact path="/register" element={<RegisterPage />} />
-          <Route exact path="/ngoLogin" element={<NgoLoginPage />} />
-          <Route exact path="/registerngo" element={<NgoRegister />} />
+          {/* <Route exact path="/register" element={<RegisterPage />} /> */}
+          {/* <Route exact path="/ngoLogin" element={<NgoLoginPage />} /> */}
+          {/* <Route exact path="/registerngo" element={<NgoRegister />} /> */}
 
           {/* Private Routes */}
-          <Route element={<RequireNgo />}>
+          {/* <Route element={<RequireNgo />}> */}
             
-            <Route exact path="/createblog" element={<CreatePost />} />
-          </Route>
+            {/* <Route exact path="/createblog" element={<CreatePost />} /> */}
+          {/* </Route> */}
 
           {/* catch Undefined routes */}
-          <Route path="*" element={<MissingPage />} />
+          {/* <Route path="*" element={<MissingPage />} /> */}
         </Route>
       </Routes>
   );
