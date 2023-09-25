@@ -1,14 +1,14 @@
 import "./Navbar2.css";
 import { NavLink } from "react-router-dom";
 // import { AuthUserContext } from "../../context/AuthContext";
-import { useContext } from "react";
+// import { useContext } from "react";
 
 export default function Navbar2() {
-  const { AuthUser, setAuthUser } = useContext(AuthUserContext);
+  // const { AuthUser, setAuthUser } = useContext(AuthUserContext);
 
-  function Logout() {
-    setAuthUser(null);
-  }
+  // function Logout() {
+  //   setAuthUser(null);
+  // }
   return (
     <nav className="navbar2">
       {/* <div className="navbar-logo"> */}
@@ -33,37 +33,21 @@ export default function Navbar2() {
         <li>
           <NavLink to="/event">Events</NavLink>
         </li>
-        {AuthUser && (
-          <li>
-            <NavLink to="/chat">Chat</NavLink>
-          </li>
-        )}
-        {!AuthUser ? (
-          <></>
-        ) : (
-          <li>
-            <NavLink to="/profile">Profile</NavLink>
-          </li>
-        )}
+        <li>
+          <NavLink to="/chat">Chat</NavLink>
+        </li>
+        <li>
+          <NavLink to="/profile">Profile</NavLink>
+        </li>
       </ul>
       <div className="logoutDiv">
-        {!AuthUser ? (
-          <>
-            <button className="lg-btn">
-              <NavLink className="logout-btn" to={"/login"}>
-                LOGIN
-              </NavLink>
-            </button>
-          </>
-        ) : (
-          <>
-            <button className="lg-btn">
-              <NavLink className="logout-btn" onClick={Logout} to={"/"}>
-                LOGOUT
-              </NavLink>
-            </button>
-          </>
-        )}
+        <>
+          <button className="lg-btn">
+            <NavLink className="logout-btn" to={"/login"}>
+              LOGIN
+            </NavLink>
+          </button>
+        </>
       </div>
     </nav>
   );
