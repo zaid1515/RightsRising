@@ -70,10 +70,15 @@ const authUser = asyncHandler(async (req, res) => {
     if (user && (await user.matchPasswords(password))) {
         generateToken(res, user._id, user.role);
         res.status(200).json({
-            _id: user.id,
-            username: user.username,
-            email: user.email,
-            age : user.age,
+            message : `User Login SuccessFull.`,
+            auth : true,
+            role : 0,
+            user: {
+                _id: user.id,
+                username: user.username,
+                email: user.email,
+                age: user.age,
+            }
         });
     } else {
         res.status(401);
