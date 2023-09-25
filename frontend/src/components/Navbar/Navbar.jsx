@@ -2,7 +2,7 @@ import React, { createContext } from "react";
 import "./Navbar.css";
 import Img1 from "../../images/cd1.jpg";
 import { NavLink } from "react-router-dom";
-import { AuthUserContext } from "../../context/AuthContext";
+// import { AuthUserContext } from "../../context/AuthContext";
 
 export default function Navbar() {
   const { AuthUser } = createContext(AuthUserContext);

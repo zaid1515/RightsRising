@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
-import FormContainer from "../components/FormContainer";
+import FormContainer from "../../components/FormContainer";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import FormGroup from "../components/FormFields";
-import { UserContext } from "../hooks/userContext";
+import FormGroup from "../../components/FormFields";
+import { UserContext } from "../../hooks/userContext";
 
 const NgoLoginPage = () => {
   const userContext = useContext(UserContext);

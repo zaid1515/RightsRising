@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import {
   BrowserRouter
 } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { UserContextProvider } from "./hooks/userContext.jsx";
 import { AuthContextProvider } from "./hooks/authContext.jsx";
 
