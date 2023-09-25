@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
-import FormContainer from "../components/FormContainer";
+import FormContainer from "../../components/FormContainer";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import FormGroup from "../components/FormFields";
+import FormGroup from "../../components/FormFields";
 
-const NgoRegister = () => {
+const RegisterPage = () => {
 
     const navigate = useNavigate();
     const [validationErrors, setValidationErrors] = useState({});
     const [formData, setFormData] = useState({
-        name : '',
+        username : '',
         email : '',
         password : '',
         confirmPassword : '',
+        age : ''
     });
 
-    const { name, email, password, confirmPassword } = formData;
+    const { username, email, age, password, confirmPassword } = formData;
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -29,15 +30,19 @@ const NgoRegister = () => {
     const validateForm = () => {
         const errors = {};
 
-        if(!name.trim()){
-            errors.name = `name is required.`
+        if(!username.trim()){
+            errors.username = `Username is required.`
         }
 
         if (!email.trim()) {
             errors.email = "Email is required";
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             errors.email = "Invalid email format";
-        }  
+        }
+
+        if(!age){
+            errors.age = `Please provide the age`;
+        }
 
         if (!password.trim()) {
             errors.password = "Password is required";
@@ -58,7 +63,7 @@ const NgoRegister = () => {
         if(Object.keys(errors).length === 0){
             // Form is valid proceed with regsitration.
             try{
-                const response = await axios.post('/api/ngo/', formData)
+                const response = await axios.post('/api/users/', formData)
                 console.log(response);
 
                 if(response.status === 200){ 
@@ -68,7 +73,8 @@ const NgoRegister = () => {
                     registrationsuccess page directly without registering. 
                     @vighnesh and @abuzaid.
                     */
-                    navigate('/ngologin');
+                    console.log(`registered Successfully`);
+                    navigate('/login');
                 }
             } catch(error){
                 if(!error.response){
@@ -91,14 +97,14 @@ const NgoRegister = () => {
             <Form onSubmit={submitHandler}>
 
                 <FormGroup 
-                    controlId='name'
-                    label='name'
+                    controlId='username'
+                    label='username'
                     type='text'
                     placeholder='Enter Name'
-                    name='name'
-                    value={name}
+                    name='username'
+                    value={username}
                     onChange={handleChange}
-                    error={validationErrors.name}
+                    error={validationErrors.username}
                 />
 
                 <FormGroup 
@@ -110,6 +116,17 @@ const NgoRegister = () => {
                     value={email}
                     onChange={handleChange}
                     error={validationErrors.email}
+                />
+
+                <FormGroup 
+                    controlId='age'
+                    label='age'
+                    type='number'
+                    placeholder='age'
+                    name='age'
+                    value={age}
+                    onChange={handleChange}
+                    error={validationErrors.age}
                 />
 
                 <FormGroup 
@@ -148,4 +165,4 @@ const NgoRegister = () => {
     );
 };
 
-export default NgoRegister;
+export default RegisterPage;

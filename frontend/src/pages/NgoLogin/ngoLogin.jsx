@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
-import FormContainer from "../components/FormContainer";
-import { Link, useNavigate} from "react-router-dom";
-import FormGroup from "../components/FormFields";
-import { AuthContext } from "../hooks/authContext";
+import FormContainer from "../../components/FormContainer";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import FormGroup from "../../components/FormFields";
+import { UserContext } from "../../hooks/userContext";
 
-const LoginPage = () => {
-
+const NgoLoginPage = () => {
+  const userContext = useContext(UserContext);
+  const { userInfo, setUserInfo } = userContext;
   const navigate = useNavigate();
-  const {login} = useContext(AuthContext);
   const [loginValidationErrors, setLoginValidationErrors] = useState({});
   const [loginForm, setLoginForm] = useState({
     email: "",
@@ -50,13 +51,22 @@ const LoginPage = () => {
 
     if (Object.keys(errors).length === 0) {
       try {
-        const response = await login(loginForm);
-        console.log(response.data);
-        if(response.data.user){
-          navigate('/');
+        const response = await axios.post("/api/ngo/auth", loginForm);
+        console.log(response);
+
+        if (response.status === 200) {
+          console.log("authenticated successfully");
+          setUserInfo(response.data);
+          navigate("/");
         }
       } catch (error) {
-        console.log('login page : ',error);
+        if (!error.response) {
+          console.log(error);
+        } else {
+          console.log(error.response.data);
+          // if the user submits a email that already has an account then add a pop-up component down below.
+          // @vighnesh and @abuzaid.
+        }
       }
     } else {
       setLoginValidationErrors(errors);
@@ -104,4 +114,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default NgoLoginPage;
