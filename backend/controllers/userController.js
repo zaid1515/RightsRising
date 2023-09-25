@@ -100,6 +100,8 @@ const logoutUser = asyncHandler(async (req, res) => {
 
     res.status(201).json({
         message: `User logged out.`,
+        auth : false,
+        role : 3
     });
 });
 
@@ -116,7 +118,11 @@ const getUserPorfile = asyncHandler(async (req, res) => {
         age : req.user.age
     }
 
-    res.status(201).json(user);
+    res.status(201).json({
+        message : `Fetched Profile.`,
+        role : 1,
+        user
+    });
 });
 
 /*
@@ -150,10 +156,14 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
         const updatedUser = await user.save();
         res.status(200).json({
+            message : `user updated.`,
+            role : 1,
+            user : {
             _id: updatedUser._id,
             username : updatedUser.username,
             email : updatedUser.email
-        })
+        }
+    })
 
     } else {
         res.status(404);

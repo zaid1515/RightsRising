@@ -3,10 +3,25 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt, FaBook, FaPlus, FaEdit } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../hooks/authContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
-  const {isAuthenticated} = useContext(AuthContext);
+  const {isAuthenticated, logout} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = async(e) => {
+    e.preventDefault();
+
+    try{
+      const response = await logout();
+      if(response){
+        navigate('/');
+      }
+    }catch(err){
+      console.log(`error from the header : `, err);
+    }
+  }
 
   return (
     <header>
@@ -28,7 +43,7 @@ const Header = () => {
                       </Nav.Link>
                     </>
                   )}
-                    <Nav.Link href="/login">
+                    <Nav.Link href="/login" onClick={(e) => handleLogout(e)}>
                       <FaSignOutAlt /> Log Out
                     </Nav.Link>
                 </>

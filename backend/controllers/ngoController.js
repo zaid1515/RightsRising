@@ -96,6 +96,7 @@ const logoutNgo = asyncHandler( async(req, res) => {
 
     res.status(201).json({
         message: `Ngo logged out.`,
+        auth : false,
         role : 3
     });
 });

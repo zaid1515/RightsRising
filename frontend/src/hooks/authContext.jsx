@@ -1,15 +1,31 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
 export function AuthContextProvider({children}) {
 
-    const [isAuthenticated, setIsAuthenticated] = useState({
-        message : `Authenticate to access this feature.`,
-        auth : false,
-        role : 3
-    });
+    const [isAuthenticated, setIsAuthenticated] = useState({});
+
+    async function checkAuthenticationStatus() {
+        try {
+            const response = await axios.get("http://localhost:3000/", {
+            withCredentials: true,
+            });
+
+            if (response.status === 201) {
+                console.log(response.data);
+            setIsAuthenticated(response.data);
+            }
+        } catch (error) {
+            // Handle error
+            console.error("Error checking authentication status:", error);
+        }
+    }
+
+    useEffect(() => {
+        checkAuthenticationStatus()
+    }, []);
 
     const login = async(formData) => {
         try {
@@ -39,7 +55,7 @@ export function AuthContextProvider({children}) {
 
     const logout = async() => {
         let path;
-        if (role === 0 || role === "0") {
+        if (isAuthenticated.role === 0 || isAuthenticated.role === "0") {
                 path = `/api/users/logout`;
         } else {
             path = `/api/ngo/logout`;
@@ -47,13 +63,11 @@ export function AuthContextProvider({children}) {
 
         try {
             const res = await axios.post(path, { withCredentials: true });
-            console.log(res.data);
-            setIsAuthenticated({
-                message : `Authenticate to access this feature.`,
-                auth : false,
-                role : 3
-            });
-            navigate("/");
+            console.log('from the authcontext : ',res.data);
+            if(res.status === 201){
+                setIsAuthenticated(res.data);
+                return res;
+            }
         } catch (err) {
             console.log(err);
         }

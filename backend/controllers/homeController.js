@@ -23,7 +23,7 @@ const getRole = asyncHandler( async(req, res) => {
                 const user = await User.findById(decoded.objId).select('-password');
 
                 if(!user){
-                    return res.status(404).json({
+                    return res.status(201).json({
                         message : 'User not found.',
                         auth : false,
                         role : 3,
@@ -42,7 +42,7 @@ const getRole = asyncHandler( async(req, res) => {
                 const ngo = await Ngo.findById(decoded.objId).select('-password');
 
                 if(!ngo){
-                    return res.status(404).json({
+                    return res.status(201).json({
                         message : 'ngo not found.',
                         auth : false,
                         role : 3,
@@ -57,14 +57,14 @@ const getRole = asyncHandler( async(req, res) => {
                 });
             }
         }catch(err){
-            res.status(400).json({
+            res.status(201).json({
                 message : `Invalid Token, please login again.`,
                 auth : false,
                 role : 3,
             })
         }
     } else {
-        return res.status(200).json({
+        return res.status(201).json({
             message : `Login to access the features.`,
             auth : false,
             role : 3,
