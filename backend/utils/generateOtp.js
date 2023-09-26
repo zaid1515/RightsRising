@@ -11,8 +11,8 @@ const sendOtp = async(email) => {
     const transporter = nodemailer.createTransport({
         service : 'Gmail',
         auth : {
-            user : "karanadwani.official@gmail.com",
-            pass : "ku2kyr3@aj"
+            user : "",
+            pass : ""
         },
     });
 
@@ -32,3 +32,5 @@ const sendOtp = async(email) => {
         throw new Error('Failed to send OTP.');
     }
 }
+
+module.exports = sendOtp;

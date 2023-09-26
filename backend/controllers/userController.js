@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const generateToken = require("../utils/generateToken");
+const sendOtp = require("../utils/generateOtp");
 
 /*
 @ Desc : Register a user.
@@ -68,6 +69,7 @@ const authUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({email})
 
     if (user && (await user.matchPasswords(password))) {
+        const otp = await sendOtp(email);
         generateToken(res, user._id, user.role);
         res.status(200).json({
             message : `User Login SuccessFull.`,
@@ -78,7 +80,8 @@ const authUser = asyncHandler(async (req, res) => {
                 username: user.username,
                 email: user.email,
                 age: user.age,
-            }
+            },
+            otp
         });
     } else {
         res.status(401);
