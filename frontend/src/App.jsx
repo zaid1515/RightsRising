@@ -10,7 +10,7 @@ import Layout from './pages/Layout'
 import MissingPage from './pages/MissingPage'
 import RequireNgo from './components/RequireNgo'
 import RequireUser from './components/RequireUser'
-import ProfilePage from './pages/Profile/ProfilePage'
+import Profile from './pages/Profile/ProfilePage'
 import ProtectRoutes from './components/ProtectRoutes'
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Route element={<ProtectRoutes />}>
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/register" element={<RegisterPage />} />
+          <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/ngoLogin" element={<NgoLoginPage />} />
           <Route exact path="/registerngo" element={<NgoRegister />} />
         </Route>
@@ -36,7 +37,7 @@ function App() {
 
         {/* Private Routes for Users */}
         <Route element={<RequireUser />}>
-          <Route exact path="/userprofile" element={<ProfilePage />} />
+          <Route exact path="/userprofile" element={<Profile />} />
         </Route>
 
         {/* catch Undefined routes */}

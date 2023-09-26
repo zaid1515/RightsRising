@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import "./Progress.css";
-import { AuthUserContext } from "../../context/AuthContext";
+// import { AuthUserContext } from "../../context/AuthContext";
 
 export default function Progress() {
-  const { AuthUser } = useContext(AuthUserContext);
-  console.log(AuthUser._id)
+  // const { AuthUser } = useContext(AuthUserContext);
+  // console.log(AuthUser._id)
   return (
     <div className="progress" data-aos="fade-down" data-aos-duration="500">
       <div className="progressWrapper">
         <div className="progressText">
-          <small>Hi, {AuthUser.firstname}!</small>
+          <small>Hi, username!</small>
           <h1>You have completed 6 lessons this week</h1>
           <button className="pg-btn">SEE ALL</button>
         </div>
