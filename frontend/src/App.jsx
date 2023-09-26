@@ -12,6 +12,7 @@ import RequireNgo from './components/RequireNgo'
 import RequireUser from './components/RequireUser'
 import Profile from './pages/Profile/ProfilePage'
 import ProtectRoutes from './components/ProtectRoutes'
+import Leaderboard from './pages/Leaderboard/Leaderboard'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/ngoLogin" element={<NgoLoginPage />} />
           <Route exact path="/registerngo" element={<NgoRegister />} />
+          <Route exact path="/leaderboard" element={<Leaderboard />} />
         </Route>
 
         {/* Private Routes for Ngos */}
