@@ -1,13 +1,14 @@
 
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt, FaBook, FaPlus, FaEdit } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../hooks/authContext";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
-  const {isAuthenticated, logout} = useContext(AuthContext);
+  const { isAuthenticated, logout, setIsAuthenticated } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = async(e) => {
@@ -16,6 +17,7 @@ const Header = () => {
     try{
       const response = await logout();
       if(response){
+        setIsAuthenticated(response.data);
         navigate('/');
       }
     }catch(err){

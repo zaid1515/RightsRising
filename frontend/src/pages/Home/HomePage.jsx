@@ -1,10 +1,9 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../hooks/userContext";
+
+import { AuthContext } from "../../hooks/authContext";
+import { useContext, useEffect} from "react";
 import React from "react";
 import "./Home.css";
 import Navbar2 from "../../components/Navbar/Navbar2";
-import Img1 from "../../images/home-img.jpg";
 import home2 from "../../images/home2.jpg";
 import home3 from "../../images/home3.jpg";
 import Person1 from "../../images/person1.jpg";
@@ -13,14 +12,22 @@ import Person3 from "../../images/person3.jpg";
 import Blogcard from "../../components/Cards/Blogcard";
 import { NavLink } from "react-router-dom";
 
+
+
+
 export default function Home() {
+    const { isAuthenticated } = useContext(AuthContext);
+
+  useEffect(()=>{
+    console.log("Home page state value check : ",isAuthenticated);
+  },[]);
   return (
     <div className="home">
       <Navbar2 />
       <div className="homeWrapper">
         {/* main home page content */}
         <section className="homeSection1">
-          <div className="homeText">
+          {/* <div className="homeText">
             <h2>Best way to learn from anywhere.</h2>
             <h1 className="homeTitle">Learn with fun on any schedule</h1>
             <p>
@@ -33,12 +40,14 @@ export default function Home() {
           </div>
           <div className="imgDiv">
             <img src={Img1} alt="home img" className="homeimg" />
-          </div>
+          </div> */}
+          
         </section>
         <div className="imgDiv">{/* <img src={Arrow} alt="" /> */}</div>
 
         {/* home page cards */}
         <section className="homeSection2" data-aos="zoom-in">
+          
           <div className="wrapper">
             <div className="cdWrapper">
               <div className="cdWrapper2">

@@ -37,7 +37,7 @@ export default function Navbar2() {
           <NavLink to="/chat">Chat</NavLink>
         </li>
         <li>
-          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/userprofile">Profile</NavLink>
         </li>
       </ul>
       <div className="logoutDiv">
