@@ -181,11 +181,11 @@ const RegisterPage = () => {
         <input
           type="text"
           className="signupItem"
-          id="signupFirstname"
-          name="firstname"
+          id="signupName"
+          name="name"
           value={username}
           onChange={handleChange}
-          placeholder="Firstname"
+          placeholder="Name"
           required
         />
       </div>
@@ -231,7 +231,7 @@ const RegisterPage = () => {
         <input
           type="password"
           className="signupItem"
-          id="signupPass"
+          id="signupConfPass"
           name="password"
           value={confirmPassword}
           placeholder="Password"

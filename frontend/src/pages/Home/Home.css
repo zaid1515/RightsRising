@@ -7,35 +7,42 @@
     margin-top: 60px;
 }
 
-
-
-.homeSection1 {
-
-    font-family: 'Tilt Neon', cursive;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 338px;
-    color: white;
-    margin-bottom: 278px;
-  }
-
-  .homeSection1::before {
-    content: "";
+.animImg1{
+    height: 100px;
+    
     position: absolute;
-    background: url('../../images/bgmain2.jpg') center center/cover;
-    height: 700px;
-    margin-top: 70px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: -1;
-    /* opacity:0.9 ; */
-  }
+    animation: moveX 1.5s linear infinite alternate; 
+}
+  @keyframes moveX {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(20%); /* Adjust the distance you want the image to move */
+    }
+  } 
+
+
+  .animImg2{
+    height: 100px;
+    top: 500px;
+    left: 800px;
+    position: absolute;
+    animation: moveY 1.5s linear infinite alternate; 
+}
+  @keyframes moveY {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20%); /* Adjust the distance you want the image to move */
+    }
+  } 
+
+ 
 .homeSection1{
     display: flex;
-    /* background-color: rgb(254,249,243); */
+    background-color: rgb(254,249,243);
     padding: 20px;
 }
 

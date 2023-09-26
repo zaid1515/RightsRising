@@ -2,7 +2,7 @@ import "./Navbar2.css";
 import { NavLink } from "react-router-dom";
 // import { AuthUserContext } from "../../context/AuthContext";
 // import { useContext } from "react";
-
+// import gameicon from "../../images/gameicon.svg"
 export default function Navbar2() {
   // const { AuthUser, setAuthUser } = useContext(AuthUserContext);
 
@@ -10,7 +10,7 @@ export default function Navbar2() {
   //   setAuthUser(null);
   // }
   return (
-    <nav className="navbar2">
+    <nav className="navbar2" id="mainnav">
       {/* <div className="navbar-logo"> */}
       {/* <img src={logo} alt="logo" /> */}
       {/* </div> */}
@@ -19,7 +19,7 @@ export default function Navbar2() {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/courses">Courses</NavLink>
+          <NavLink to="/courses" >Courses</NavLink>
         </li>
         <li>
           <NavLink to="/blogs">Blogs</NavLink>

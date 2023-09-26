@@ -6,8 +6,11 @@ import "./Home.css";
 import Navbar2 from "../../components/Navbar/Navbar2";
 import home2 from "../../images/home2.jpg";
 import home3 from "../../images/home3.jpg";
+import animImg1 from "../../images/banner-shape-2.png"
+import animImg2 from "../../images/banner-shape-3.png"
 import Person1 from "../../images/person1.jpg";
 import Person2 from "../../images/person2.jpg";
+import Img1 from "../../images/home-img.jpg"
 import Person3 from "../../images/person3.jpg";
 import Blogcard from "../../components/Cards/Blogcard";
 import { NavLink } from "react-router-dom";
@@ -27,7 +30,8 @@ export default function Home() {
       <div className="homeWrapper">
         {/* main home page content */}
         <section className="homeSection1">
-          {/* <div className="homeText">
+        <img src={animImg1} alt="home img" className="animImg1" />
+          <div className="homeText">
             <h2>Best way to learn from anywhere.</h2>
             <h1 className="homeTitle">Learn with fun on any schedule</h1>
             <p>
@@ -40,8 +44,9 @@ export default function Home() {
           </div>
           <div className="imgDiv">
             <img src={Img1} alt="home img" className="homeimg" />
-          </div> */}
+          </div>
           
+            <img src={animImg2} alt="home img" className="animImg2" />
         </section>
         <div className="imgDiv">{/* <img src={Arrow} alt="" /> */}</div>
 
