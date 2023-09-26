@@ -27,6 +27,7 @@ const getRole = asyncHandler( async(req, res) => {
                         message : 'User not found.',
                         auth : false,
                         role : 3,
+                        client : {}
                     });
                 }
 
@@ -34,7 +35,7 @@ const getRole = asyncHandler( async(req, res) => {
                     message : `Loggin successfull`,
                     auth : true,
                     role : role,
-                    user
+                    client : user
                 });
 
             } else{
@@ -46,6 +47,7 @@ const getRole = asyncHandler( async(req, res) => {
                         message : 'ngo not found.',
                         auth : false,
                         role : 3,
+                        client : {}
                     });
                 }
 
@@ -53,7 +55,7 @@ const getRole = asyncHandler( async(req, res) => {
                     message : `Loggin successfull`,
                     auth : true,
                     role : role,
-                    ngo
+                    client : ngo
                 });
             }
         }catch(err){
@@ -61,6 +63,7 @@ const getRole = asyncHandler( async(req, res) => {
                 message : `Invalid Token, please login again.`,
                 auth : false,
                 role : 3,
+                client : {}
             })
         }
     } else {
@@ -68,6 +71,7 @@ const getRole = asyncHandler( async(req, res) => {
             message : `Login to access the features.`,
             auth : false,
             role : 3,
+            client : {}
         })
     }
 })

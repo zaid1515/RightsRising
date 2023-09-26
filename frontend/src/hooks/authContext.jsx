@@ -1,21 +1,28 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({
+    message : `Please login.`
+});
 
 export function AuthContextProvider({children}) {
 
-    const [isAuthenticated, setIsAuthenticated] = useState({});
+    const [isAuthenticated, setIsAuthenticated] = useState({
+        message : `PLease login.`,
+        auth : false,
+        role : 3,
+        client : {}
+    });
 
-    async function checkAuthenticationStatus() {
+    async function getState() {
         try {
             const response = await axios.get("http://localhost:3000/", {
-            withCredentials: true,
+                withCredentials: true,
             });
 
             if (response.status === 201) {
-                console.log(response.data);
-            setIsAuthenticated(response.data);
+                console.log('from the get role : ',response.data);
+                // console.log('before setting in AuthContext : ',isAuthenticated)
             }
         } catch (error) {
             // Handle error
@@ -23,23 +30,30 @@ export function AuthContextProvider({children}) {
         }
     }
 
-    useEffect(() => {
-        checkAuthenticationStatus()
-    }, []);
+    const login = async(p, formData) => {
+        let path;
+        if(p === 0){
+            path = `http://localhost:3000/api/users/auth`;
+        } else if(p === 1){
+            path = `http://localhost:3000/api/ngo/auth`;
+        }
 
-    const login = async(formData) => {
         try {
-            const response = await axios.post("http://localhost:3000/api/users/auth", formData, {
+            const response = await axios.post(path, formData, {
                 withCredentials: true,
             });
 
 
             if (response.status === 200) {
-                console.log("authenticated successfully");
-                setIsAuthenticated(response.data);
+                console.log("authenticated successfully from authcontext login.");
+                setIsAuthenticated({
+                    message : response.data.message,
+                    auth : response.data.auth,
+                    role : response.data.role,
+                    client : response.data.client,
+                });
                 return response;
             }
-
         } catch (error) {
 
             if (!error.response) {
@@ -78,6 +92,7 @@ export function AuthContextProvider({children}) {
         isAuthenticated,
         login,
         logout,
+        getState
     }
 
     return (

@@ -35,7 +35,6 @@ const registerNgo = asyncHandler( async(req, res) => {
     }
 });
 
-
 /*
 @Desc : To authenticate ngo/expert
 @Route : POST /api/ngo/auth
@@ -54,10 +53,15 @@ const authNgo = asyncHandler( async(req, res) => {
     if(ngo && (await ngo.matchPasswords(password))){
         generateToken(res, ngo._id, ngo.role);
         res.status(200).json({
-            _id : ngo._id,
-            name : ngo.name,
-            email : ngo.email,
-            message : `Successfully aithenticated`,
+                message : `ngo Login SuccessFull.`,
+                auth : true,
+                role : 1,
+                client : {
+                    _id : ngo._id,
+                    name : ngo.name,
+                    email : ngo.email,
+                    message : `Successfully aithenticated`,
+                }
         });
     } else {
         res.status(401);

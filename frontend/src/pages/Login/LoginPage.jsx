@@ -8,7 +8,7 @@ import { AuthContext } from "../../hooks/authContext";
 const LoginPage = () => {
 
   const navigate = useNavigate();
-  const {login} = useContext(AuthContext);
+  const {login, setIsAuthenticated} = useContext(AuthContext);
   const [loginValidationErrors, setLoginValidationErrors] = useState({});
   const [loginForm, setLoginForm] = useState({
     email: "",
@@ -50,9 +50,10 @@ const LoginPage = () => {
 
     if (Object.keys(errors).length === 0) {
       try {
-        const response = await login(loginForm);
-        console.log(response.data);
-        if(response.data.user){
+        const response = await login(0 ,loginForm);
+        console.log(response);
+        if(response.data.client){
+          console.log('from LoginPage : client received properly.');
           navigate('/');
         }
       } catch (error) {

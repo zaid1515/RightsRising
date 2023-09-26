@@ -1,9 +1,15 @@
-import axios from "axios";
+
+import { useContext, useEffect } from "react";
 import Hero from "../../components/Hero";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../hooks/userContext";
+import { AuthContext } from "../../hooks/authContext";
 
 const HomePage = () => {
+  const { isAuthenticated } = useContext(AuthContext);
+
+  useEffect(()=>{
+    console.log("Home page state value check : ",isAuthenticated);
+  },[]);
+
   return (
     <>
       <Hero />

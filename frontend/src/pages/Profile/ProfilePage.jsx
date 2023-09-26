@@ -1,26 +1,20 @@
-import axios from "axios"
-import { useEffect } from "react";
+import { useContext } from "react"
+import { AuthContext } from "../../hooks/authContext"
+
 
 const ProfilePage = () => {
 
-    const handleReload = async() => {
-        const data = {};
+    const {isAuthenticated} = useContext(AuthContext);
 
-        try{
-            const response = await axios.get('/api/users/profile');
-            console.log(response);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    useEffect(() => {
-        handleReload();
-    }, []);
+    const {username, role, age} = isAuthenticated.user;
 
     return (
-        <div>ProfilePage</div>
-    )
+        <div>
+            <h2>username : {username}</h2>
+            <h2>role : {role} </h2>
+            <h2> age : {age} </h2>
+        </div>
+    );
 }
 
 export default ProfilePage

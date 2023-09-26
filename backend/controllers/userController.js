@@ -73,7 +73,7 @@ const authUser = asyncHandler(async (req, res) => {
             message : `User Login SuccessFull.`,
             auth : true,
             role : 0,
-            user: {
+            client : {
                 _id: user.id,
                 username: user.username,
                 email: user.email,
