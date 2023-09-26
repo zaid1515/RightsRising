@@ -9,18 +9,20 @@ import CreatePost from './pages/CreatePost'
 import Layout from './pages/Layout'
 import MissingPage from './pages/MissingPage'
 import RequireNgo from './components/RequireNgo'
+import Leaderboard from './pages/Leaderboard/Leaderboard'
 
 function App() {
 
   return (
       <Routes>
-        <Route path="/" element={<HomePage />}>
+        <Route path="/" element={<Layout />}>
           {/* Public Routes */}
           {/* <Route exact index element={<HomePage />} /> */}
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/register" element={<RegisterPage />} />
           <Route exact path="/ngoLogin" element={<NgoLoginPage />} />
           <Route exact path="/registerngo" element={<NgoRegister />} />
+          <Route exact path="/leaderboard" element={<Leaderboard />} />
 
           {/* Private Routes */}
           <Route element={<RequireNgo />}>

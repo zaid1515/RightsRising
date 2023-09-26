@@ -1,0 +1,141 @@
+.ldContainer{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+
+.ldWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ldList {
+    list-style-type: none;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    gap: 10px;
+    background-color: rgb(249,203,135);
+  }
+
+  .heading{
+    list-style-type: none;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    width: 50%;
+    gap: 10px;
+    background-color: antiquewhite;
+  }
+
+  
+
+  .ldItem {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .rank {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 25px; 
+  }
+  
+  .playerName {
+    font-size: 25px; 
+  }
+  
+  .profImgDiv{
+    object-fit: cover;
+    object-position: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .profImg{
+    max-width: 100%;
+    border-radius: 50%;
+  }
+
+  .rankLadder {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  /*  leaderboard div*/
+
+  .ldItem1{
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    /* gap: 20px; */
+    align-items: center;
+  }
+
+  .top3Div{
+    width: 100%;
+    display: flex;
+    /* background-color: antiquewhite; */
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+  }
+
+  .top3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    align-self: flex-end; 
+    padding: 20px;
+  }
+
+  .first{
+    width: 60%;
+    height: 200px;
+    background-color: #ffd700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+  }
+
+  .second{
+    width: 60%;
+    height: 160px;
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+  }
+
+  .third{
+    width: 60%;
+    height: 120px;
+    background-color: rgb(205,127,50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+  }
