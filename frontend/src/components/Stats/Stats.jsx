@@ -1,4 +1,3 @@
-import React from "react";
 import "./Stats.css";
 import StatsChart from "../Chart/StatsChart";
 import Calendar from "react-calendar";
