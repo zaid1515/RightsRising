@@ -16,8 +16,9 @@ import Blogcard from "../../components/Cards/Blogcard";
 import { NavLink } from "react-router-dom";
 import videobg from "../../images/16455786_05sa_ldnn_2106179_animation.mp4"
 import youngboy from "../../images/youngboy.png"
-import kidbg2 from "../../images/kidbg2.png"
 import kidbg3 from "../../images/kidbg3.png"
+import kidbg4 from "../../images/kidbg4.png"
+import kidbg5 from "../../images/kidbg5.png"
 
 
 export default function Home() {
@@ -53,8 +54,8 @@ export default function Home() {
             
           {/* </div> */}
           <div className="allkids">  
-          <img src={youngboy} alt="home img" className="homeimg" />
-            <img src={kidbg2} alt="home img" className="homeimg" />
+            <img src={kidbg5} alt="home img" className="homeimg" />
+          <img src={kidbg4} alt="home img" className="homeimg" />
             <img src={kidbg3} alt="home img" className="homeimg" />
           </div>
             {/* <img src={animImg2} alt="home img" className="animImg2" /> */}
