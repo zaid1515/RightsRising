@@ -107,7 +107,7 @@ export default function Chat() {
 
   const renderCards = (items) => {
     return filteredData.map((item, index) => (
-      <li key={index} onClick={() => createConvo(item._id)}>
+      <li key={index} className="userListItem" onClick={() => createConvo(item._id)}>
         {item.firstname + " " + item.lastname}
       </li>
     ));
