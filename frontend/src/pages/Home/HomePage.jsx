@@ -14,8 +14,10 @@ import Img1 from "../../images/home-img.jpg"
 import Person3 from "../../images/person3.jpg";
 import Blogcard from "../../components/Cards/Blogcard";
 import { NavLink } from "react-router-dom";
-
-
+import videobg from "../../images/16455786_05sa_ldnn_2106179_animation.mp4"
+import youngboy from "../../images/youngboy.png"
+import kidbg2 from "../../images/kidbg2.png"
+import kidbg3 from "../../images/kidbg3.png"
 
 
 export default function Home() {
@@ -30,23 +32,32 @@ export default function Home() {
       <div className="homeWrapper">
         {/* main home page content */}
         <section className="homeSection1">
-        <img src={animImg1} alt="home img" className="animImg1" />
+        {/* <video autoPlay loop muted id="background-video">
+        <source src={videobg} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> */}
+        {/* <img src={animImg1} alt="home img" className="animImg1" /> */}
           <div className="homeText">
-            <h2>Best way to learn from anywhere.</h2>
+            {/* <h2>Best way to learn from anywhere.</h2> */}
             <h1 className="homeTitle">Learn with fun on any schedule</h1>
-            <p>
+            {/* <p>
               A global knowlege platform for kids between 8-16 to make them
               aware of their rights.
-            </p>
+            </p> */}
             <div className="btn">
-              <button className="explore">Explore More</button>
+              <button className="explore">Start Learning</button>
             </div>
           </div>
-          <div className="imgDiv">
-            <img src={Img1} alt="home img" className="homeimg" />
+          {/* <div className="imgDiv"> */}
+            {/* <img src={Img1} alt="home img" className="homeimg" /> */}
+            
+          {/* </div> */}
+          <div className="allkids">  
+          <img src={youngboy} alt="home img" className="homeimg" />
+            <img src={kidbg2} alt="home img" className="homeimg" />
+            <img src={kidbg3} alt="home img" className="homeimg" />
           </div>
-          
-            <img src={animImg2} alt="home img" className="animImg2" />
+            {/* <img src={animImg2} alt="home img" className="animImg2" /> */}
         </section>
         <div className="imgDiv">{/* <img src={Arrow} alt="" /> */}</div>
 
