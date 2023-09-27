@@ -14,6 +14,7 @@ import Profile from './pages/Profile/ProfilePage'
 import ProtectRoutes from './components/ProtectRoutes'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
 import Gamespg from './pages/games/Gamespg'
+import Chat from './pages/Chat/Chat'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/registerngo" element={<NgoRegister />} />
           <Route exact path="/leaderboard" element={<Leaderboard />} />
           <Route exact path="/games" element={<Gamespg />} />
+          <Route exact path="/chat" element={<Chat />} />
         </Route>
 
         {/* Private Routes for Ngos */}
