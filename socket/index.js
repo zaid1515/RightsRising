@@ -3,7 +3,9 @@ const http = require('http');
 const mongoose = require('mongoose');
 const socketIo = require('socket.io');
 const cors = require('cors');
-const Messages = require('../socket/model/messages'); // Assuming you have a "messages" model
+const router=require('../socket/routes/users');
+const Messages = require('../socket/model/messages'); 
+const Convorouter = require('../socket/routes/conversations');
 
 const app = express();
 const server = http.createServer(app);
@@ -27,6 +29,8 @@ db.once('open', () => {
 app.use(cors());
 
 app.use(express.json());
+app.use('/conversation',Convorouter);
+app.use('/users',router);
 
 app.post('/messages', async (req, res) => {
   try {
