@@ -33,6 +33,7 @@ export default function Home() {
       <div className="homeWrapper">
         {/* main home page content */}
         <section className="homeSection1">
+          <h1 className="homeTitle2">Play, Learn, and Advocate.</h1>
         {/* <video autoPlay loop muted id="background-video">
         <source src={videobg} type="video/mp4" />
         Your browser does not support the video tag.
@@ -40,7 +41,7 @@ export default function Home() {
         {/* <img src={animImg1} alt="home img" className="animImg1" /> */}
           <div className="homeText">
             {/* <h2>Best way to learn from anywhere.</h2> */}
-            <h1 className="homeTitle">Learn with fun on any schedule</h1>
+            <h1 className="homeTitle">Empowering Kids for a Just Tomorrow! </h1>
             {/* <p>
               A global knowlege platform for kids between 8-16 to make them
               aware of their rights.

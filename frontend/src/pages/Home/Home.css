@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&family=Roboto&family=Titillium+Web:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Fredoka:wght@600&family=Poppins:wght@500&family=Signika+Negative:wght@500;600&display=swap');
 .home{
     width: 100%;  
     padding: 10px;
@@ -38,11 +38,11 @@
 }
 
 .homeSection1::before {
-    margin-top: 100px;
+    margin-top:71px;
     content: "";
     position: absolute;
     background: url('../../images/16455786_05sa_ldnn_2106179.jpg') center center/cover;
-    height: 640px;
+    height: 650px;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -76,12 +76,12 @@
 .allkids{
     position: absolute;
     right: 0px;
-    top: 400px;
+    top: 340px;
 }
 .homeimg{
     /* border-radius: 20px; */
     /* max-width: 100%; */
-    height: 340px;
+    height: 380px;
     /* height: 340px; */
     margin: 0;
     padding: 0;
@@ -95,19 +95,43 @@
 
 .homeTitle{
     font-size: 50px;
-    font-weight:900px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-weight:1000px;
+    color: purple;
+    color: rgb(145, 4, 106);
+
+    /* font-family: 'Barlow Condensed', sans-serif;
     font-family: 'Roboto', sans-serif;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Titillium Web', sans-serif; */
+    margin: 10px;
+    margin-right: 16px;
+    margin-bottom: 40px;
+    /* margin: 0px; */
+    font-family: 'Fredoka', sans-serif;
+}
+.homeTitle2{
+    font-size: 55px;
+    font-weight:1000px;
+    color: purple;
+    color: rgb(196, 35, 151);
+    /* font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titillium Web', sans-serif; */
+    margin: 10px;
+    position: absolute;
+    top: 80px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .homeText{
     padding: 20px;
     flex: 5.5;
+    margin-right: 700px;
     margin-left: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* background-color: rgba(255, 165, 0,0.1); */
+    
 }
 
 .homeText3{
@@ -121,12 +145,13 @@
 }
 
 .explore{
-    background-color: rgb(255, 166, 0);
+    background-color: orange;
     border: 0px;
-    padding: 20px;
-    font-size: larger;
+    padding: 18px  24px;
+    font-size: 28px;
     color: white;
     border-radius: 15px;
+    font-family: 'Signika Negative', sans-serif;
 }
 
 /* cards css */
