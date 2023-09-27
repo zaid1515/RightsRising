@@ -10,7 +10,7 @@
 }
 
 .chatSidebar{
-    background-color: rgb(241,244,246);
+    background-color: rgb(255,213,204);
     width: 25%;
 }
 
@@ -122,4 +122,15 @@
     }
   }
   
+  ul{
+    list-style: none;
+    text-decoration: none;
+  }
   
+  .userListItem{
+    margin: 5px;
+    margin-right: 15px;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgb(252, 235, 231);
+  }
