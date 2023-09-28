@@ -1,22 +1,23 @@
-.eventContainer{
-    /* display: flex; */
+.eventContainer {
     width: 100%;
-}
-
-.eventWrapper{
+  }
+  
+  .eventWrapper {
     display: flex;
-} 
-
-.main{
+  }
+  
+  .main {
     flex: 11;
     width: 100%;
     margin-top: 70px;
-}
-
-.eventList{
+  }
+  
+  .eventList {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-}
+  }
+  
+  

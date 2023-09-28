@@ -11,12 +11,14 @@ export default function Experts(props) {
         <div className="card7">
           <div className="first-content">
             <img src={props.image} alt="" className="cd7image" />
+            <div className="cd7first">
+              <p className="cd7firstText">{props.name}<br></br>{props.position} </p>
+            </div>
           </div>
           <div className="second-content">
             <div className="cd7textDiv">
               <h2 className="cd7text">{props.name} </h2>
               <button className="cssbuttons-io-button">
-                {" "}
                 Chat
                 <div className="icon">
                   <svg
