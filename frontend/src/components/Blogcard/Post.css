@@ -15,7 +15,7 @@
 }
 
 
-.imgDiv{
+.post .imgDiv{
     width: fit-content;
     object-fit: cover;
     display: flex;

@@ -59,7 +59,7 @@
 }
 
 /* image css */
-.imgDiv{
+.home .imgDiv{
     object-fit: cover;
     display: flex;
     justify-content: center;
