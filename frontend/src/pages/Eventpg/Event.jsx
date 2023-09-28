@@ -8,7 +8,7 @@ export default function Event() {
   return (
     <div className="eventContainer">
       <div className="eventWrapper">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div className="main">
           <Navbar2 />
           <div className="eventList">
