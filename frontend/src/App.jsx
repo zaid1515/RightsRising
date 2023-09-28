@@ -17,6 +17,8 @@ import Gamespg from './pages/games/Gamespg'
 import Chat from './pages/Chat/Chat'
 import Events from './pages/Eventpg/Event'
 import Modules from './pages/Videospg/Videos'
+import Webinar from './pages/Webinar/Webinar'
+
 
 function App() {
 
@@ -38,6 +40,7 @@ function App() {
           <Route exact path="/chat" element={<Chat />} />
           <Route exact path="/event" element={<Events />} />
           <Route exact path="/modules" element={<Modules />} />
+          <Route exact path="/webinar" element={<Webinar />} />
         </Route>
 
         {/* Private Routes for Ngos */}
