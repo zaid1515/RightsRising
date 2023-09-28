@@ -5,11 +5,13 @@
 .navbar2 {
 
     background-color:rgb(246, 236, 224);
-    /* background: url('../../images//navbarimg.png');
-    background-repeat: no-repeat;
+     background: url('../../images/navbg1.jpg');
+  /*  background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -120px; */
     height: 10%;
+    object-fit: cover;
+    background-position: center;
     /* background-color: rgb(196, 35, 151); */
     /* background-color: rgb(94, 217, 224); */
     background-color:rgb(246, 236, 224);
