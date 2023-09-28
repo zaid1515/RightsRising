@@ -49,6 +49,7 @@ export default function Navbar2() {
           </button>
         </>
       </div>
+      {/* <br /> */}
     </nav>
   );
 }
