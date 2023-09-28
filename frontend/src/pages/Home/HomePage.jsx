@@ -1,32 +1,31 @@
-
 import { AuthContext } from "../../hooks/authContext";
-import { useContext, useEffect} from "react";
+import { useContext, useEffect } from "react";
 import React from "react";
 import "./Home.css";
 import Navbar2 from "../../components/Navbar/Navbar2";
 import home2 from "../../images/home2.jpg";
 import home3 from "../../images/home3.jpg";
-import animImg1 from "../../images/banner-shape-2.png"
-import animImg2 from "../../images/banner-shape-3.png"
+import animImg1 from "../../images/banner-shape-2.png";
+import animImg2 from "../../images/banner-shape-3.png";
 import Person1 from "../../images/person1.jpg";
 import Person2 from "../../images/person2.jpg";
-import Img1 from "../../images/home-img.jpg"
+import Img1 from "../../images/home-img.jpg";
 import Person3 from "../../images/person3.jpg";
 import Blogcard from "../../components/Cards/Blogcard";
 import { NavLink } from "react-router-dom";
-import videobg from "../../images/16455786_05sa_ldnn_2106179_animation.mp4"
-import youngboy from "../../images/youngboy.png"
-import kidbg3 from "../../images/kidbg3.png"
-import kidbg4 from "../../images/kidbg4.png"
-import kidbg5 from "../../images/kidbg5.png"
-
+import videobg from "../../images/16455786_05sa_ldnn_2106179_animation.mp4";
+import youngboy from "../../images/youngboy.png";
+import kidbg3 from "../../images/kidbg3.png";
+import kidbg4 from "../../images/kidbg4.png";
+import kidbg5 from "../../images/kidbg5.png";
+import Homecard from "../../components/Cards/Homecard";
 
 export default function Home() {
-    const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
 
-  useEffect(()=>{
-    console.log("Home page state value check : ",isAuthenticated);
-  },[]);
+  useEffect(() => {
+    console.log("Home page state value check : ", isAuthenticated);
+  }, []);
   return (
     <div className="home">
       <Navbar2 />
@@ -34,11 +33,11 @@ export default function Home() {
         {/* main home page content */}
         <section className="homeSection1">
           <h1 className="homeTitle2">Play, Learn, and Advocate.</h1>
-        {/* <video autoPlay loop muted id="background-video">
+          {/* <video autoPlay loop muted id="background-video">
         <source src={videobg} type="video/mp4" />
         Your browser does not support the video tag.
       </video> */}
-        {/* <img src={animImg1} alt="home img" className="animImg1" /> */}
+          {/* <img src={animImg1} alt="home img" className="animImg1" /> */}
           <div className="homeText">
             {/* <h2>Best way to learn from anywhere.</h2> */}
             <h1 className="homeTitle">Empowering Kids for a Just Tomorrow! </h1>
@@ -51,67 +50,26 @@ export default function Home() {
             </div>
           </div>
           {/* <div className="imgDiv"> */}
-            {/* <img src={Img1} alt="home img" className="homeimg" /> */}
-            
+          {/* <img src={Img1} alt="home img" className="homeimg" /> */}
+
           {/* </div> */}
-          <div className="allkids">  
+          <div className="allkids">
             <img src={kidbg5} alt="home img" className="homeimg" />
-          <img src={kidbg4} alt="home img" className="homeimg" />
+            <img src={kidbg4} alt="home img" className="homeimg" />
             <img src={kidbg3} alt="home img" className="homeimg" />
           </div>
-            {/* <img src={animImg2} alt="home img" className="animImg2" /> */}
+          {/* <img src={animImg2} alt="home img" className="animImg2" /> */}
         </section>
         <div className="imgDiv">{/* <img src={Arrow} alt="" /> */}</div>
 
         {/* home page cards */}
-        <section className="homeSection2" data-aos="zoom-in">
-          
-          <div className="wrapper">
-            <div className="cdWrapper">
-              <div className="cdWrapper2">
-                <div className="cd">
-                  <h2>High Quality Learning</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum is simply
-                    dummy text of the printing and typesetting industry. Lorem
-                    Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                  </p>
-                  <div className="btnWrapper">
-                    <button className="btn-2">Read More</button>
-                  </div>
-                </div>
-                <div className="cd">
-                  <h2>Friendly Teachers</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum is simply
-                    dummy text of the printing and typesetting industry. Lorem
-                    Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                  </p>
-                  <div className="btnWrapper">
-                    <button className="btn-2">Read More</button>
-                  </div>
-                </div>
-                <div className="cd">
-                  <h2>Best Support Ever</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum is simply
-                    dummy text of the printing and typesetting industry. Lorem
-                    Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                  </p>
-                  <div className="btnWrapper">
-                    <button className="btn-2">Read More</button>
-                  </div>
-                </div>
-              </div>
+        <section className="homeSection2">
+          <div className="cdWrapper">
+            <div className="cdWrapper2">
+              <Homecard name={"Kids Enjoying"} ct={"cd6Container1"}/>
+              <Homecard name={"Kids Enjoying"} ct={"cd6Container2"}/>
+              <Homecard name={"Painting Compettion"} ct={"cd6Container3"}/>
+              <Homecard name={"KGuided Drawing"} ct={"cd6Container4"}/>
             </div>
           </div>
         </section>
@@ -218,9 +176,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </div>
     </div>
   );
 }
-
