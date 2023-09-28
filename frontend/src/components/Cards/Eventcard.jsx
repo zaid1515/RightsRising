@@ -8,7 +8,7 @@ export default function Eventcard() {
     <div className="cd3">
         <div className="cd3Wrapper" data-aos="zoom-in">
             {/* <div className="imgDiv"> */}
-                <img src={cd1} alt="" srcset="" className='cd3img'/>
+                <img src={cd1} alt=""  className='cd3img'/>
             {/* </div> */}
             <div className="cd3Text1">
                 <h2 className="cd3title">Maths Olympiad</h2>
