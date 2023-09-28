@@ -189,9 +189,9 @@ export default function Home() {
           <div className="cdWrapper">
             <h1 className="homeTitle">Experts</h1>
             <div className="cdWrapper2">
-              <Experts image={Person2} name={"Hardik Bhagat"}/>
-              <Experts image={Person1} name={"Vighnesh Adelkar"}/>
-              <Experts image={Person3} name={"Abuzaid Ansari"}/>
+              <Experts image={Person2} name={"Hardik Bhagat"} position={"Child rights activist"}/>
+              <Experts image={Person1} name={"Vighnesh Adelkar"} position={"Philanthropist"}/>
+              <Experts image={Person3} name={"Abuzaid Ansari"} position={"Education"}/>
             </div>
           </div>
         </section>
