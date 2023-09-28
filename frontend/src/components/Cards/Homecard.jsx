@@ -9,8 +9,7 @@ export default function Homecard(props) {
         <div className="cd6textDiv">
           <h3>{props.name}</h3>
           <p className="cd6Text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
-            optio non unde temporibus velit necessitatibus odio.
+            {props.text}
           </p>
         </div>
         <div className="cd6imgDiv">

@@ -73,10 +73,10 @@ export default function Home() {
         <section className="homeSection2">
           <div className="cdWrapper">
             <div className="cdWrapper2">
-              <Homecard name={"Kids Enjoying"} ct={"cd6Container1"}/>
-              <Homecard name={"Kids Enjoying"} ct={"cd6Container2"}/>
-              <Homecard name={"Painting Compettion"} ct={"cd6Container3"}/>
-              <Homecard name={"KGuided Drawing"} ct={"cd6Container4"}/>
+              <Homecard name={"Challenges"} ct={"cd6Container1"} image={"img1"} text="Word Scramble, Quiz , Memory-Game and others" />
+              <Homecard name={"Modules and Stories"} ct={"cd6Container2"} image={"img1"} text="Learning along with visuals and stories"/>
+              <Homecard name={"3D Games"} ct={"cd6Container3"} image={"img1"} text="Interactive 3d gameplay based-on real-life scenarios"/>
+              <Homecard name={"Experts Webinar"} ct={"cd6Container4"} image={"img1"} text="Get lessons from experts and chat with them "/>
             </div>
           </div>
         </section>
