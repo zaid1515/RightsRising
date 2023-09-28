@@ -76,6 +76,8 @@ export default function Home() {
         {/* home page cards */}
         <section className="homeSection2">
           <div className="cdWrapper">
+        <h1 className="homeTitle">Our Activies</h1>
+
             <div className="cdWrapper2">
               <Homecard name={"Challenges"} ct={"cd6Container1"} image={game1} text="Word Scramble, Quiz , Memory-Game and others" />
               <Homecard name={"Modules and Stories"} ct={"cd6Container2"} image={game2} text="Learning along with visuals and stories"/>

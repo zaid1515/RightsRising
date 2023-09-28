@@ -3,6 +3,9 @@
 *{
     font-family: 'Poppins';
 }
+a{
+    text-decoration: none;
+}
 .home{
     width: 100%;  
     padding: 10px;
@@ -52,7 +55,8 @@
     /* margin-top: 80px; */
     background-color: rgba(251,103,142,255);
     margin-bottom: 80px;
-    height: 80vh;
+    height: 700px;
+    background-image: url('https://bracketweb.com/kidearn-html/assets/images/shapes/program-bg-shape-3.png');
 }
 
 .homeSection3{
@@ -148,15 +152,19 @@
 
 /* cards css */
 .cdWrapper{
-    margin-top: 50px;
+    /* margin-top: 50px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 }
-
+.homeSection2 h1{
+    color: antiquewhite;
+    margin: 30px;
+    margin-bottom: 50px;
+}
 .cdWrapper2{
     display: flex;
     gap: 30px;

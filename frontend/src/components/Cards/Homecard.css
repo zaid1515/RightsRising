@@ -84,7 +84,7 @@
 }
 
 .cd6Container1:hover .cd6textDiv{
-    transform: translateY(-15px);
+    /* transform: translateY(-15px); */
 }
 
 .cd6Container1:hover{
@@ -101,7 +101,7 @@
 }
 
 .cd6Container1:hover .cd6Image{
-    transform: scale(1.18); 
+    /* transform: scale(1.18);  */
     border-end-end-radius: 20px;
     border-end-start-radius: 20px;
 }
@@ -119,7 +119,7 @@
 }
 
 .cd6Container2:hover .cd6textDiv{
-    transform: translateY(-15px);
+    /* transform: translateY(-15px); */
 }
 
 .cd6Container2:hover{
@@ -136,7 +136,7 @@
 }
 
 .cd6Container2:hover .cd6Image{
-    transform: scale(1.18); 
+    /* transform: scale(1.18);  */
     border-end-end-radius: 20px;
     border-end-start-radius: 20px;
 }
@@ -154,7 +154,7 @@
 }
 
 .cd6Container3:hover .cd6textDiv{
-    transform: translateY(-15px);
+    /* transform: translateY(-15px); */
 }
 
 .cd6Container3:hover{
@@ -171,7 +171,7 @@
 }
 
 .cd6Container3:hover .cd6Image{
-    transform: scale(1.18); 
+    /* transform: scale(1.18);  */
     border-end-end-radius: 20px;
     border-end-start-radius: 20px;
 }
@@ -189,7 +189,7 @@
 }
 
 .cd6Container4:hover .cd6textDiv{
-    transform: translateY(-15px);
+    /* transform: translateY(-15px); */
 }
 
 .cd6Container4:hover{
@@ -207,7 +207,7 @@
 }
 
 .cd6Container4:hover .cd6Image{
-    transform: scale(1.18); 
+    /* transform: scale(1.18);  */
     border-end-end-radius: 20px;
     border-end-start-radius: 20px;
 }
