@@ -37,13 +37,13 @@ export default function Videos() {
     {
       id: 4,
       title: "Voice of Alex",
-      image: vd5img,
+      image: vd4img,
       url: Video4,
     },
     {
       id: 5,
       title: "Good Touch Bad Touch",
-      image: vd4img,
+      image: vd5img,
       url: Video5,
     },
     {
