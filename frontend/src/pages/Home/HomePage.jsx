@@ -19,6 +19,7 @@ import kidbg3 from "../../images/kidbg3.png";
 import kidbg4 from "../../images/kidbg4.png";
 import kidbg5 from "../../images/kidbg5.png";
 import Homecard from "../../components/Cards/Homecard";
+import Experts from "../../components/Cards/Experts";
 
 export default function Home() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -174,11 +175,23 @@ export default function Home() {
         {/* blogs section */}
         <section className="homeSection3" data-aos="zoom-in">
           <div className="cdWrapper">
-            <h1 className="homeTitle">Experts</h1>
+            <h1 className="homeTitle">Blogs</h1>
             <div className="cdWrapper2">
               <Blogcard image={Person2} name={"Priya"} />
               <Blogcard image={Person1} name={"Vighnesh"} />
               <Blogcard image={Person3} name={"Abuzaid"} />
+            </div>
+          </div>
+        </section>
+
+        {/* experts section */}
+        <section className="homeSection3" data-aos="zoom-in">
+          <div className="cdWrapper">
+            <h1 className="homeTitle">Experts</h1>
+            <div className="cdWrapper2">
+              <Experts image={Person2} name={"Hardik Bhagat"}/>
+              <Experts image={Person1} name={"Vighnesh Adelkar"}/>
+              <Experts image={Person3} name={"Abuzaid Ansari"}/>
             </div>
           </div>
         </section>
