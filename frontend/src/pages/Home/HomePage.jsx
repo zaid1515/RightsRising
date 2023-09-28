@@ -20,6 +20,10 @@ import kidbg4 from "../../images/kidbg4.png";
 import kidbg5 from "../../images/kidbg5.png";
 import Homecard from "../../components/Cards/Homecard";
 import Experts from "../../components/Cards/Experts";
+import game1 from '../../images/game1.jpg'
+import game2 from '../../images/game2.jpg'
+import game3 from '../../images/game3.jpg'
+import game4 from '../../images/game4.jpg'
 
 export default function Home() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -73,10 +77,12 @@ export default function Home() {
         <section className="homeSection2">
           <div className="cdWrapper">
             <div className="cdWrapper2">
-              <Homecard name={"Challenges"} ct={"cd6Container1"} image={"img1"} text="Word Scramble, Quiz , Memory-Game and others" />
-              <Homecard name={"Modules and Stories"} ct={"cd6Container2"} image={"img1"} text="Learning along with visuals and stories"/>
-              <Homecard name={"3D Games"} ct={"cd6Container3"} image={"img1"} text="Interactive 3d gameplay based-on real-life scenarios"/>
-              <Homecard name={"Experts Webinar"} ct={"cd6Container4"} image={"img1"} text="Get lessons from experts and chat with them "/>
+
+              <Homecard name={"Challenges"} ct={"cd6Container1"} image={game1} text="Word Scramble, Quiz , Memory-Game and others" />
+              <Homecard name={"Modules and Stories"} ct={"cd6Container2"} image={game2} text="Learning along with visuals and stories"/>
+              <Homecard name={"3D Games"} ct={"cd6Container3"} image={game4} text="Interactive 3d gameplay based-on real-life scenarios"/>
+              <Homecard name={"Experts Webinar"} ct={"cd6Container4"} image={game3} text="Get lessons from experts and chat with them "/>
+
             </div>
           </div>
         </section>
@@ -189,9 +195,11 @@ export default function Home() {
           <div className="cdWrapper">
             <h1 className="homeTitle">Experts</h1>
             <div className="cdWrapper2">
+
               <Experts image={Person2} name={"Hardik Bhagat"} position={"Child rights activist"}/>
               <Experts image={Person1} name={"Vighnesh Adelkar"} position={"Philanthropist"}/>
               <Experts image={Person3} name={"Abuzaid Ansari"} position={"Education"}/>
+
             </div>
           </div>
         </section>

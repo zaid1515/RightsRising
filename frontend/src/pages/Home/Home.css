@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&family=Roboto&family=Titillium+Web:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Fredoka:wght@600&family=Poppins:wght@500&family=Signika+Negative:wght@500;600&display=swap');
+*{
+    font-family: 'Poppins';
+}
 .home{
     width: 100%;  
     padding: 10px;
@@ -36,7 +39,7 @@
     content: "";
     position: absolute;
     background: url('../../images/16455786_05sa_ldnn_2106179.jpg') center center/cover;
-    height: 650px;
+    height: 658px;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -45,9 +48,11 @@
 }
 
 .homeSection2{
-    padding: 20px;
-    margin-top: 80px;
+    padding: 20px 0px;
+    /* margin-top: 80px; */
+    background-color: rgba(251,103,142,255);
     margin-bottom: 80px;
+    height: 80vh;
 }
 
 .homeSection3{
@@ -94,7 +99,7 @@
     color: rgb(145, 4, 106);
     margin: 10px;
     margin-right: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-family: 'Fredoka', sans-serif;
     transition: transform 1200ms ease, opacity 1200ms ease;
     /* transform: translateX(-200px); */
