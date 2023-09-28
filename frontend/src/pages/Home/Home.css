@@ -140,15 +140,6 @@ a{
     margin-right: 50px;
 }
 
-.explore{
-    background-color: orange;
-    border: 0px;
-    padding: 18px  24px;
-    font-size: 28px;
-    color: white;
-    border-radius: 15px;
-    font-family: 'Signika Negative', sans-serif;
-}
 
 /* cards css */
 .cdWrapper{
@@ -269,6 +260,85 @@ a{
       transform: translateX(0%);
       opacity: 1;
     }
-  }
+}
   
+.btn .btnhover {
+    --c: rgb(143, 3, 143);
+   
+    /* color: orange; */
+    color: white;
+    background-color: #ffa600;
+    font-size: 16px;
+    border: 0.3em solid orange;
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+    border: 0px;
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+    font-family: 'Signika Negative', sans-serif;
+    
+}
 
+.btnhover span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+
+}
+
+@-webkit-keyframes shake{
+    from{
+        -webkit-transform:rotate(4deg);
+    }
+    to{
+        -webkit-transform: rotate(-4deg);
+        -webkit-transform-origin:center center ;
+    }
+}
+
+
+.btnhover:hover {
+    color: white;
+    -webkit-animation: shake .2s ease-in-out .1s infinite alternate;
+
+}
+
+.btnhover:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.btnhover span:nth-child(1) {
+    --n: 1;
+}
+
+.btnhover span:nth-child(2) {
+    --n: 2;
+}
+
+.btnhover span:nth-child(3) {
+    --n: 3;
+}
+
+.btn .btnhover span:nth-child(4) {
+    --n: 4;
+}

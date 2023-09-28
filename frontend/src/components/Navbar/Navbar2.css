@@ -49,6 +49,7 @@ nav ul li{
     background-color: orange;
     color: white;
         list-style: none;
+        font-family: 'Poppins';
         padding: 6px 14px;
         margin-right: 30px;
         font-size: 115%;
@@ -104,4 +105,54 @@ nav ul{
 
 nav ul li:hover{
     -webkit-animation: shake .2s ease-in-out .1s infinite alternate;
+}
+
+nav ul li {
+    --c: rgb(143, 3, 143);
+    color: var(--c);
+
+    text-transform: uppercase;
+
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
 }

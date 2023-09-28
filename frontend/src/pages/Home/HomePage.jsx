@@ -57,7 +57,9 @@ export default function Home() {
               aware of their rights.
             </p> */}
             <div className="btn">
-              <button className="explore">Start Learning</button>
+              <div className="explore btnhover">Start Learning
+              <span></span><span></span><span></span><span></span>
+              </div>
             </div>
           </div>
           {/* <div className="imgDiv"> */}
