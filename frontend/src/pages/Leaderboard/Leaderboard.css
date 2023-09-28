@@ -25,7 +25,7 @@
     background-color: rgb(249,203,135);
   }
 
-  .heading{
+  .ldContainer .heading{
     list-style-type: none;
     padding: 20px;
     border-radius: 20px;
@@ -144,7 +144,7 @@
   }
 
   /* leaderboard image */
-  .imgDiv{
+  .ldContainer .imgDiv{
     width: 70%;
     object-fit: cover;
   }
