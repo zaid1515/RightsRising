@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 // import { AuthUserContext } from "../../context/AuthContext";
 // import { useContext } from "react";
 // import gameicon from "../../images/gameicon.svg"
+import img1 from "../../images/navbarimg.png";
+
 export default function Navbar2() {
   // const { AuthUser, setAuthUser } = useContext(AuthUserContext);
 
@@ -11,15 +13,12 @@ export default function Navbar2() {
   // }
   return (
     <nav className="navbar2" id="mainnav">
-      {/* <div className="navbar-logo"> */}
-      {/* <img src={logo} alt="logo" /> */}
-      {/* </div> */}
       <ul className="navbar-links">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/courses" >Courses</NavLink>
+          <NavLink to="/courses">Courses</NavLink>
         </li>
         <li>
           <NavLink to="/blogs">Blogs</NavLink>
@@ -49,7 +48,11 @@ export default function Navbar2() {
           </button>
         </>
       </div>
+
+      {/* <img src={img1} alt="" className="navbarimg" /> */}
+
       {/* <br /> */}
+
     </nav>
   );
 }
