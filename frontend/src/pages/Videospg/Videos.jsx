@@ -3,9 +3,13 @@ import Navbar2 from "../../components/Navbar/Navbar2";
 import Video1 from "../../videos/1st.mp4";
 import Video2 from "../../videos/2nd.mp4";
 import Video3 from "../../videos/3rd.mp4";
+import Video4 from "../../videos/The Voice of Alex.mp4";
+import Video5 from "../../videos/GdBdTouch.mp4";
 import vd1img from "../../images/video1img.jpg";
 import vd2img from "../../images/video2img.jpg";
 import vd3img from "../../images/video3img.jpg";
+import vd4img from "../../images/video4img.png";
+import vd5img from "../../images/video5img.png";
 import "./Videos.css";
 
 export default function Videos() {
@@ -32,15 +36,15 @@ export default function Videos() {
     },
     {
       id: 4,
-      title: "Child Rights Awareness",
-      image: vd1img,
-      url: Video1,
+      title: "Voice of Alex",
+      image: vd5img,
+      url: Video4,
     },
     {
       id: 5,
-      title: "Right To Freedom",
-      image: vd2img,
-      url: Video2,
+      title: "Good Touch Bad Touch",
+      image: vd4img,
+      url: Video5,
     },
     {
       id: 6,
@@ -61,8 +65,8 @@ export default function Videos() {
   return (
     <div className="videoContainer">
       <Navbar2 />
-      <div className="cdWrapper">
-        <h2 className="homeTitle">Modules</h2>
+      <div className="cdWrapper" id="vid-pg-cont">
+        <h2 className="homeTitle" id="md-title">Modules</h2>
         <div className="videoWrapper">
           {videoData.map((video) => (
             <div
