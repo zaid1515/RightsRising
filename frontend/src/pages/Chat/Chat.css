@@ -128,9 +128,10 @@
   }
   
   .userListItem{
+    font-size: 20px;
     margin: 5px;
     margin-right: 15px;
-    padding: 7px;
+    padding: 15px;
     border-radius: 5px;
     background-color: rgb(252, 235, 231);
   }
