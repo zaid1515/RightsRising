@@ -15,6 +15,8 @@ import ProtectRoutes from './components/ProtectRoutes'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
 import Gamespg from './pages/games/Gamespg'
 import Chat from './pages/Chat/Chat'
+import Events from './pages/Eventpg/Event'
+import Modules from './pages/Videospg/Videos'
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
           <Route exact path="/leaderboard" element={<Leaderboard />} />
           <Route exact path="/games" element={<Gamespg />} />
           <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/event" element={<Events />} />
+          <Route exact path="/modules" element={<Modules />} />
         </Route>
 
         {/* Private Routes for Ngos */}
