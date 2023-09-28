@@ -37,7 +37,7 @@ export default function Videos() {
     {
       id: 4,
       title: "Voice of Alex",
-      image: vd4img,
+      image: vd5img,
       url: Video4,
     },
     {
