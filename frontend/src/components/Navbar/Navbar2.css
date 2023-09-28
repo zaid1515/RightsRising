@@ -3,12 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 .navbar2 {
+
     background-color:rgb(246, 236, 224);
     /* background: url('../../images//navbarimg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -120px; */
     height: 10%;
+    /* background-color: rgb(196, 35, 151); */
+    /* background-color: rgb(94, 217, 224); */
+    background-color:rgb(246, 236, 224);
     letter-spacing: 1px;
     color: rgba(50,126,94,255);
     align-items: center;

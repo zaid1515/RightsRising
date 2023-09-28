@@ -48,7 +48,11 @@ export default function Navbar2() {
           </button>
         </>
       </div>
+
       {/* <img src={img1} alt="" className="navbarimg" /> */}
+
+      {/* <br /> */}
+
     </nav>
   );
 }

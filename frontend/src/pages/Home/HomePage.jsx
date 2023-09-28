@@ -33,7 +33,11 @@ export default function Home() {
         {/* main home page content */}
         <section className="homeSection1">
           <h1 className="homeTitle2">Play, Learn, and Advocate.</h1>
+
           {/* <video autoPlay loop muted id="background-video">
+
+        {/* <video autoPlay loop muted id="background-video">
+
         <source src={videobg} type="video/mp4" />
         Your browser does not support the video tag.
       </video> */}
