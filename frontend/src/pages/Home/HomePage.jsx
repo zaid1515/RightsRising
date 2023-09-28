@@ -77,10 +77,12 @@ export default function Home() {
         <section className="homeSection2">
           <div className="cdWrapper">
             <div className="cdWrapper2">
+
               <Homecard name={"Challenges"} ct={"cd6Container1"} image={game1} text="Word Scramble, Quiz , Memory-Game and others" />
               <Homecard name={"Modules and Stories"} ct={"cd6Container2"} image={game2} text="Learning along with visuals and stories"/>
               <Homecard name={"3D Games"} ct={"cd6Container3"} image={game4} text="Interactive 3d gameplay based-on real-life scenarios"/>
               <Homecard name={"Experts Webinar"} ct={"cd6Container4"} image={game3} text="Get lessons from experts and chat with them "/>
+
             </div>
           </div>
         </section>
@@ -193,9 +195,11 @@ export default function Home() {
           <div className="cdWrapper">
             <h1 className="homeTitle">Experts</h1>
             <div className="cdWrapper2">
-              <Experts image={Person2} name={"Hardik Bhagat"} />
-              <Experts image={Person1} name={"Vighnesh Adelkar"} />
-              <Experts image={Person3} name={"Abuzaid Ansari"} />
+
+              <Experts image={Person2} name={"Hardik Bhagat"} position={"Child rights activist"}/>
+              <Experts image={Person1} name={"Vighnesh Adelkar"} position={"Philanthropist"}/>
+              <Experts image={Person3} name={"Abuzaid Ansari"} position={"Education"}/>
+
             </div>
           </div>
         </section>

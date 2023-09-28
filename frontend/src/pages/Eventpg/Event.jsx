@@ -23,6 +23,7 @@ export default function Event() {
             <Eventcard />
             <Eventcard />
             <Eventcard />
+            <Eventcard />
           </div>
         </div>
       </div>
