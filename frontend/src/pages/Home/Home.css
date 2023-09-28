@@ -20,6 +20,7 @@
   .allkids{
     display: flex;
   }
+
 .homeSection1{
     display: flex;
     flex-direction: column;
@@ -91,24 +92,19 @@
     font-weight:1000px;
     color: purple;
     color: rgb(145, 4, 106);
-
-    /* font-family: 'Barlow Condensed', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Titillium Web', sans-serif; */
     margin: 10px;
     margin-right: 16px;
     margin-bottom: 40px;
-    /* margin: 0px; */
     font-family: 'Fredoka', sans-serif;
+    transition: transform 1200ms ease, opacity 1200ms ease;
+    /* transform: translateX(-200px); */
+    animation: slideRight 2s forwards;
 }
 .homeTitle2{
     font-size: 55px;
     font-weight:1000px;
     color: purple;
     color: rgb(196, 35, 151);
-    /* font-family: 'Barlow Condensed', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Titillium Web', sans-serif; */
     margin: 10px;
     position: absolute;
     top: 80px;
@@ -123,8 +119,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background-color: rgba(255, 165, 0,0.1); */
-    
 }
 
 .homeText3{
@@ -251,4 +245,17 @@
     row-gap: 20px;
 }
 
+
+@keyframes slideRight {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+      background-color: purple;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  
 
