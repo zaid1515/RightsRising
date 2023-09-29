@@ -5,7 +5,7 @@ import "./Eventcard.css";
 
 export default function Eventcard() {
   return (
-    <div className="cd3">
+    <div className="cd3" id='eventspg'>
         <div className="cd3Wrapper" data-aos="zoom-in">
             {/* <div className="imgDiv"> */}
                 <img src={cd1} alt=""  className='cd3img'/>

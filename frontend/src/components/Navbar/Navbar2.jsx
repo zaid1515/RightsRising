@@ -13,30 +13,40 @@ export default function Navbar2() {
   // }
   return (
     <nav className="navbar2" id="mainnav">
-      <ul className="navbar-links">
+      <ul className="navbar-links ">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Home
+          <span></span><span></span><span></span><span></span></NavLink>
+          
         </li>
         <li>
-          <NavLink to="/courses">Courses</NavLink>
+          <NavLink to="/courses">Courses
+          <span></span><span></span><span></span><span></span></NavLink>
+
         </li>
         <li>
-          <NavLink to="/blogs">Blogs</NavLink>
+          <NavLink to="/blogs">Blogs
+          <span></span><span></span><span></span><span></span></NavLink>
         </li>
         <li>
-          <NavLink to="https://kodey18.github.io/quiz-game/">Quiz</NavLink>
+          <NavLink to="https://kodey18.github.io/quiz-game/">Quiz
+          <span></span><span></span><span></span><span></span></NavLink>
         </li>
         <li>
-          <NavLink to="https://kodey18.github.io/scramble-game/">Games</NavLink>
+          <NavLink to="https://kodey18.github.io/scramble-game/">Games
+          <span></span><span></span><span></span><span></span></NavLink>
         </li>
         <li>
-          <NavLink to="/event">Events</NavLink>
+          <NavLink to="/event">Events
+          <span></span><span></span><span></span><span></span></NavLink>
         </li>
         <li>
-          <NavLink to="/chat">Chat</NavLink>
+          <NavLink to="/chat">Chat
+          <span></span><span></span><span></span><span></span></NavLink>
         </li>
         <li>
-          <NavLink to="/userprofile">Profile</NavLink>
+          <NavLink to="/userprofile">Profile
+          <span></span><span></span><span></span><span></span></NavLink>
         </li>
       </ul>
       <div className="logoutDiv">

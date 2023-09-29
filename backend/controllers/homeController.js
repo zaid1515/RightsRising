@@ -71,7 +71,7 @@ const getRole = asyncHandler( async(req, res) => {
             message : `Login to access the features.`,
             auth : false,
             role : 3,
-            client : {}
+            client : {} 
         })
     }
 })

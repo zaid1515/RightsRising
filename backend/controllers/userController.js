@@ -31,10 +31,10 @@ const registerUser = asyncHandler(async (req, res) => {
     if (user) {
         // generateToken(res, user._id);
         res.status(200).json({
-        // _id: user.id,
-        // username: user.username,
-        // email: user.email,
-        message:`user successfully registerd.`,
+            _id: user.id,
+            username: user.username,
+            email: user.email,
+            message:`user successfully registerd.`,
         });
     } else {
         res.status(400);
@@ -69,7 +69,7 @@ const authUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({email})
 
     if (user && (await user.matchPasswords(password))) {
-        const otp = await sendOtp(email);
+        // const otp = await sendOtp(email);
         generateToken(res, user._id, user.role);
         res.status(200).json({
             message : `User Login SuccessFull.`,
@@ -81,7 +81,6 @@ const authUser = asyncHandler(async (req, res) => {
                 email: user.email,
                 age: user.age,
             },
-            otp
         });
     } else {
         res.status(401);
