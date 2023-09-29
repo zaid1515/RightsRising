@@ -1,10 +1,10 @@
 import React, { useState,  createContext } from "react";
-import { AuthUserContext } from "../../context/AuthContext";
+import { AuthContext } from "../../hooks/authContext";
 import Person1 from "../../images/person1.jpg";
 import "./Messages.css";
 
 export default function Messages({ messages,User}) {
-  const { AuthUser } = createContext(AuthUserContext);
+  const { AuthUser } = createContext(AuthContext);
   const [incomingMessages, setIncomingMessages] = useState([messages]);
   console.log(AuthUser)
 

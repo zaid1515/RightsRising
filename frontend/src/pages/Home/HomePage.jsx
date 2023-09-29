@@ -1,99 +1,90 @@
-
 import { AuthContext } from "../../hooks/authContext";
-import { useContext, useEffect} from "react";
+import { useContext, useEffect } from "react";
 import React from "react";
 import "./Home.css";
 import Navbar2 from "../../components/Navbar/Navbar2";
 import home2 from "../../images/home2.jpg";
 import home3 from "../../images/home3.jpg";
+import animImg1 from "../../images/banner-shape-2.png";
+import animImg2 from "../../images/banner-shape-3.png";
 import Person1 from "../../images/person1.jpg";
 import Person2 from "../../images/person2.jpg";
+import Img1 from "../../images/home-img.jpg";
 import Person3 from "../../images/person3.jpg";
 import Blogcard from "../../components/Cards/Blogcard";
 import { NavLink } from "react-router-dom";
-
-
-
+import videobg from "../../images/16455786_05sa_ldnn_2106179_animation.mp4";
+import youngboy from "../../images/youngboy.png";
+import kidbg3 from "../../images/kidbg3.png";
+import kidbg4 from "../../images/kidbg4.png";
+import kidbg5 from "../../images/kidbg5.png";
+import Homecard from "../../components/Cards/Homecard";
+import Experts from "../../components/Cards/Experts";
+import game1 from '../../images/game1.jpg'
+import game2 from '../../images/game2.jpg'
+import game3 from '../../images/game3.jpg'
+import game4 from '../../images/game4.jpg'
 
 export default function Home() {
-    const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
 
-  useEffect(()=>{
-    console.log("Home page state value check : ",isAuthenticated);
-  },[]);
+  useEffect(() => {
+    console.log("Home page state value check : ", isAuthenticated);
+  }, []);
   return (
     <div className="home">
       <Navbar2 />
       <div className="homeWrapper">
         {/* main home page content */}
         <section className="homeSection1">
-          {/* <div className="homeText">
-            <h2>Best way to learn from anywhere.</h2>
-            <h1 className="homeTitle">Learn with fun on any schedule</h1>
-            <p>
+          <h1 className="homeTitle2">Play, Learn, and Advocate.</h1>
+
+          {/* <video autoPlay loop muted id="background-video">
+
+        {/* <video autoPlay loop muted id="background-video">
+
+        <source src={videobg} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> */}
+          {/* <img src={animImg1} alt="home img" className="animImg1" /> */}
+          <div className="homeText">
+            {/* <h2>Best way to learn from anywhere.</h2> */}
+            <h1 className="homeTitle">Empowering Kids  </h1>
+            <h1 className="homeTitle">for a Just Tomorrow! </h1>
+
+            {/* <p>
               A global knowlege platform for kids between 8-16 to make them
               aware of their rights.
-            </p>
+            </p> */}
             <div className="btn">
-              <button className="explore">Explore More</button>
+              <div className="explore btnhover">Start Learning
+              <span></span><span></span><span></span><span></span>
+              </div>
             </div>
           </div>
-          <div className="imgDiv">
-            <img src={Img1} alt="home img" className="homeimg" />
-          </div> */}
-          
+          {/* <div className="imgDiv"> */}
+          {/* <img src={Img1} alt="home img" className="homeimg" /> */}
+
+          {/* </div> */}
+          <div className="allkids">
+            <img src={kidbg5} alt="home img" className="homeimg" />
+            <img src={kidbg4} alt="home img" className="homeimg" />
+            <img src={kidbg3} alt="home img" className="homeimg" />
+          </div>
+          {/* <img src={animImg2} alt="home img" className="animImg2" /> */}
         </section>
         <div className="imgDiv">{/* <img src={Arrow} alt="" /> */}</div>
 
         {/* home page cards */}
-        <section className="homeSection2" data-aos="zoom-in">
-          
-          <div className="wrapper">
-            <div className="cdWrapper">
-              <div className="cdWrapper2">
-                <div className="cd">
-                  <h2>High Quality Learning</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum is simply
-                    dummy text of the printing and typesetting industry. Lorem
-                    Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                  </p>
-                  <div className="btnWrapper">
-                    <button className="btn-2">Read More</button>
-                  </div>
-                </div>
-                <div className="cd">
-                  <h2>Friendly Teachers</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum is simply
-                    dummy text of the printing and typesetting industry. Lorem
-                    Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                  </p>
-                  <div className="btnWrapper">
-                    <button className="btn-2">Read More</button>
-                  </div>
-                </div>
-                <div className="cd">
-                  <h2>Best Support Ever</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum is simply
-                    dummy text of the printing and typesetting industry. Lorem
-                    Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                  </p>
-                  <div className="btnWrapper">
-                    <button className="btn-2">Read More</button>
-                  </div>
-                </div>
-              </div>
+        <section className="homeSection2">
+          <div className="cdWrapper">
+        <h1 className="homeTitle">Our Activies</h1>
+
+            <div className="cdWrapper2">
+              <Homecard name={"Challenges"} ct={"cd6Container1"} image={game1} text="Word Scramble, Quiz , Memory-Game and others" />
+              <Homecard name={"Modules and Stories"} ct={"cd6Container2"} image={game2} text="Learning along with visuals and stories"/>
+              <Homecard name={"3D Games"} ct={"cd6Container3"} image={game4} text="Interactive 3d gameplay based-on real-life scenarios"/>
+              <Homecard name={"Experts Webinar"} ct={"cd6Container4"} image={game3} text="Get lessons from experts and chat with them "/>
             </div>
           </div>
         </section>
@@ -192,7 +183,7 @@ export default function Home() {
         {/* blogs section */}
         <section className="homeSection3" data-aos="zoom-in">
           <div className="cdWrapper">
-            <h1 className="homeTitle">Experts</h1>
+            <h1 className="homeTitle">Blogs</h1>
             <div className="cdWrapper2">
               <Blogcard image={Person2} name={"Priya"} />
               <Blogcard image={Person1} name={"Vighnesh"} />
@@ -201,8 +192,20 @@ export default function Home() {
           </div>
         </section>
 
+        {/* experts section */}
+        <section className="homeSection3" data-aos="zoom-in">
+          <div className="cdWrapper">
+            <h1 className="homeTitle">Experts</h1>
+            <div className="cdWrapper2">
+
+              <Experts image={Person2} name={"Hardik Bhagat"} position={"Child rights activist"}/>
+              <Experts image={Person1} name={"Vighnesh Adelkar"} position={"Philanthropist"}/>
+              <Experts image={Person3} name={"Abuzaid Ansari"} position={"Education"}/>
+
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
-

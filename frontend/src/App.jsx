@@ -9,6 +9,14 @@ import CreatePost from './pages/CreatePost'
 import Layout from './pages/Layout'
 import MissingPage from './pages/MissingPage'
 import Profile from './pages/Profile/ProfilePage'
+import ProtectRoutes from './components/ProtectRoutes'
+import Leaderboard from './pages/Leaderboard/Leaderboard'
+import Gamespg from './pages/games/Gamespg'
+import Chat from './pages/Chat/Chat'
+import Events from './pages/Eventpg/Event'
+import Modules from './pages/Videospg/Videos'
+import Webinar from './pages/Webinar/Webinar'
+
 
 function App() {
 
@@ -25,6 +33,12 @@ function App() {
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/ngoLogin" element={<NgoLoginPage />} />
           <Route exact path="/registerngo" element={<NgoRegister />} />
+          <Route exact path="/leaderboard" element={<Leaderboard />} />
+          <Route exact path="/games" element={<Gamespg />} />
+          <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/event" element={<Events />} />
+          <Route exact path="/modules" element={<Modules />} />
+          <Route exact path="/webinar" element={<Webinar />} />
 
         {/* Private Routes for Ngos */}
           <Route exact path="/createblog" element={<CreatePost />} />
