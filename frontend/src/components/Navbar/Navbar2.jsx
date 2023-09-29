@@ -13,6 +13,7 @@ export default function Navbar2() {
   // }
   return (
     <nav className="navbar2" id="mainnav">
+      <img src={img1} alt="new" />
       <ul className="navbar-links ">
         <li>
           <NavLink to="/">Home
