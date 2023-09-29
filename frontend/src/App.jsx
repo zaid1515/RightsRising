@@ -41,6 +41,7 @@ function App() {
           <Route exact path="/event" element={<Events />} />
           <Route exact path="/modules" element={<Modules />} />
           <Route exact path="/webinar" element={<Webinar />} />
+          <Route exact path="/createblogs" element={<CreatePost />} />
         </Route>
 
         {/* Private Routes for Ngos */}
