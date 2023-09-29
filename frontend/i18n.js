@@ -24,16 +24,8 @@ const resources = {
         expertsWebinarDescription: 'Get lessons from experts and chat with them',
         aboutUs: 'About Us',
         ourMission: 'Our Mission',
-        missionDescription: `Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's
-      standard dummy text ever since the 1500s, when an unknown
-      printer took a galley of type and scrambled it to make a type
-      specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with
-      the release of Letraset sheets containing Lorem Ipsum
-      passages, and more recently with desktop publishing software
-      like Aldus PageMaker including versions of Lorem Ipsum.`,
+        missionDescription: `
+        Our platform's mission is to transform the learning experience for children aged 8-16 by combining the power of gamification with a profound exploration of child rights. Through interactive gameplay, we invite children into a captivating world where they can discover, understand, and appreciate the importance of their own rights. We're on a quest to raise awareness about these fundamental rights, providing an immersive journey that not only educates but also inspires action and advocacy. Our vision is to nurture a generation that possesses not only legal literacy but also the passion and tools to stand up for their rights and those of their peers, contributing to a brighter future where every child's rights are respected and upheld. Together, we're building a world where young minds are empowered to shape a fair and just society.`,
         activities: 'Activities',
         learningModules: 'Learning Modules',
         learningModulesDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
