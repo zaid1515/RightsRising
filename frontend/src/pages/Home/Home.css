@@ -52,7 +52,7 @@ a{
 
 .homeSection2{
     padding: 20px 0px;
-    /* margin-top: 80px; */
+    margin-top: 320px;
     background-color: rgba(251,103,142,255);
     /* margin-bottom: 80px; */
     height: 700px;
@@ -80,7 +80,7 @@ a{
 .allkids{
     position: absolute;
     right: 0px;
-    top: 340px;
+    top: 348px;
 }
 .homeimg{
     /* border-radius: 20px; */
@@ -121,11 +121,12 @@ a{
     font-family: 'Fredoka', sans-serif;
 }
 
-.homeText{
+.home .homeText{
     padding: 20px;
     flex: 5.5;
-    margin-right: 700px;
+    margin-right: 690px;
     margin-left: 50px;
+    margin-top: 410px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,6 +157,7 @@ a{
     color: antiquewhite;
     margin: 30px;
     margin-bottom: 50px;
+    /* margin-top: 400px; */
 }
 .cdWrapper2{
     display: flex;
