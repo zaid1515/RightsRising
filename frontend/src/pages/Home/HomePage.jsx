@@ -94,9 +94,10 @@ export default function Home() {
           <div className="cdWrapper">
             <h1 className="homeTitle">About Us</h1>
             <div className="cdWrapper3">
-              <div className="imgDiv">
-                <img src={home2} alt="home img" className="homeimg" />
-              </div>
+            <figure>
+    <img src={home2} alt="Thumb" width="400" height="300" />
+    <figcaption><div>START LEARNING</div></figcaption>
+  </figure>
               <div className="homeText3">
                 <h2>Our Mission</h2>
                 <p>
@@ -181,7 +182,7 @@ export default function Home() {
         </section>
 
         {/* blogs section */}
-        <section className="homeSection3" data-aos="zoom-in">
+        <section className="homeSection5" data-aos="zoom-in">
           <div className="cdWrapper">
             <h1 className="homeTitle">Blogs</h1>
             <div className="cdWrapper2">
@@ -193,7 +194,7 @@ export default function Home() {
         </section>
 
         {/* experts section */}
-        <section className="homeSection3" data-aos="zoom-in">
+        <section className="homeSection6" data-aos="zoom-in">
           <div className="cdWrapper">
             <h1 className="homeTitle">Experts</h1>
             <div className="cdWrapper2">
