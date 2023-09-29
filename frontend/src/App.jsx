@@ -16,7 +16,7 @@ import Chat from './pages/Chat/Chat'
 import Events from './pages/Eventpg/Event'
 import Modules from './pages/Videospg/Videos'
 import Webinar from './pages/Webinar/Webinar'
-
+// import Blogs from './pages/'
 
 function App() {
 
