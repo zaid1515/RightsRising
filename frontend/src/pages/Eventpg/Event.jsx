@@ -8,23 +8,20 @@ export default function Event() {
   return (
     <div className="eventContainer">
       <div className="eventWrapper">
-        {/* <Sidebar /> */}
-        <div className="main">
-          <Navbar2 />
-          <div className="eventList">
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-            <Eventcard />
-          </div>
+        <Navbar2 />
+        <div className="eventList">
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
+          <Eventcard />
         </div>
       </div>
     </div>
