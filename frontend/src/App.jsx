@@ -8,8 +8,6 @@ import NgoRegister from './pages/NgoRegister/NgoRegisterPage'
 import CreatePost from './pages/CreatePost'
 import Layout from './pages/Layout'
 import MissingPage from './pages/MissingPage'
-import RequireNgo from './components/RequireNgo'
-import RequireUser from './components/RequireUser'
 import Profile from './pages/Profile/ProfilePage'
 import ProtectRoutes from './components/ProtectRoutes'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
@@ -29,7 +27,7 @@ function App() {
         <Route exact index element={<HomePage />} />
 
         {/* login protect Routes */}
-        <Route element={<ProtectRoutes />}>
+
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/register" element={<RegisterPage />} />
           <Route exact path="/profile" element={<Profile />} />
@@ -41,17 +39,13 @@ function App() {
           <Route exact path="/event" element={<Events />} />
           <Route exact path="/modules" element={<Modules />} />
           <Route exact path="/webinar" element={<Webinar />} />
-        </Route>
 
         {/* Private Routes for Ngos */}
-        <Route element={<RequireNgo />}>
           <Route exact path="/createblog" element={<CreatePost />} />
-        </Route>
+        
 
         {/* Private Routes for Users */}
-        <Route element={<RequireUser />}>
           <Route exact path="/userprofile" element={<Profile />} />
-        </Route>
 
         {/* catch Undefined routes */}
         <Route path="*" element={<MissingPage />} />

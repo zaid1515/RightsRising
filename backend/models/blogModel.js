@@ -17,11 +17,11 @@ const blogSchema = new mongoose.Schema({
             /* type : Buffer ,  //Buffer is a data structure that contains binary data. It’s used to represent raw data buffers (that may contain text */
             type : String,
         },
-        author : {
-            type : mongoose.Schema.Types.ObjectId,
-            ref : 'ngos',
-            required : true
-        }
+        // author : {
+        //     type : mongoose.Schema.Types.ObjectId,
+        //     ref : 'ngos',
+        //     required : true
+        // }
 },
 {
     timestamps : true,

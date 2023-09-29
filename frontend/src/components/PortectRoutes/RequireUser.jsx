@@ -1,14 +1,17 @@
 import React, { useContext } from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
-import { AuthContext } from '../hooks/authContext';
 
 const RequireUser = () => {
 
     const location = useLocation();
-    const {isAuthenticated} = useContext(AuthContext);
+    const obj = JSON.parse(localStorage.getItem("client"));
+
+    useEffect(() => {
+        console.log("Require user state value check : ", obj);
+    }, []);
 
     return (
-        isAuthenticated.role === 0
+        obj && obj.role === 0
             ? <Outlet />
             : <Navigate  to='/login' state={{from : location}} replace />
     )
