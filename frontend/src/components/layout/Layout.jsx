@@ -20,7 +20,7 @@ const Layout = () => {
         <main>
             {shouldRender && <Navbar2 />}
             <Outlet />
-            {shouldRender && <Footer />}
+            {/* {shouldRender && <Footer />} */}
         </main>
     )
 }

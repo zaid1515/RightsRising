@@ -9,12 +9,16 @@ import MissingPage from "./components/Missing Page/MissingPage";
 import RequireUser from "./components/PortectRoutes/RequireUser";
 import RequireNgo from "./components/PortectRoutes/RequireNgo";
 import NgoProfile from "./pages/Ngo Profile/NgoProfile";
-import Blogs from "./pages/Blogs/Blogs";
-import Courses from "./components/Courses/Courses";
+// import Blogs from "./pages/Blogs/Blogs";
 import Event from "./pages/Eventpg/Event";
 import RegisterPage from "./pages/login Page/RegsiterPage";
 import CreateBlog from "./pages/Create Blog/CreateBlog";
 import ProfilePage from "./pages/Profile/ProfilePage";
+import Chat from "./pages/Chat/Chat";
+import Gamespg from "./pages/games/Gamespg";
+import Videos from "./pages/Videospg/Videos";
+import Blogs2 from "./pages/Blogs2/Blog2";
+import Leaderboard from "./pages/Leaderboard/Leaderboard";
 
 function App() {
   return (
@@ -22,7 +26,6 @@ function App() {
       <Route path="/" element={<Layout />}>
         {/* public routes */}
         <Route index exact element={<Home />} />
-        <Route exact path="/blogs" element={<Blogs />} />
 
         {/* login protect rooutes */}
         <Route element={<ProtectRoutes />}>
@@ -36,13 +39,18 @@ function App() {
         <Route element={<RequireNgo />}>
           <Route exact path="/ngoprofile" element={<NgoProfile />} />
           <Route exact path="/createblog" element={<CreateBlog />} />
+          <Route exact path="/blogs" element={<Blogs2 />} />
         </Route>
 
         {/* User protect routes */}
         <Route element={<RequireUser />}>
           <Route exact path="/userprofile" element={<ProfilePage />} />
-          <Route exact path="/courses" element={<Courses />} />
+          <Route exact path="/modules" element={<Videos />} />
           <Route exact path="/events" element={<Event />} />
+          <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/games" element={<Gamespg />} />
+          <Route exact path="/blogs" element={<Blogs2 />} />
+          <Route exact path="/leaderboard" element={<Leaderboard />} />
         </Route>
 
         {/* catch all other undefined routes */}

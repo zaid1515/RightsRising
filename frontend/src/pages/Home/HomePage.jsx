@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import "./Home.css";
 import Navbar2 from "../../components/Navbar/Navbar2";
 import home2 from "../../images/home2.jpg";
@@ -19,10 +19,9 @@ import game2 from "../../images/game2.jpg";
 import game3 from "../../images/game3.jpg";
 import game4 from "../../images/game4.jpg";
 import { useTranslation } from 'react-i18next';
+import AuthContext from "../../hooks/AuthContext";
 
 export default function Home() {
-<<<<<<< HEAD
-=======
   const { isAuthenticated } = useContext(AuthContext);
 
   const { t } = useTranslation();
@@ -30,7 +29,6 @@ export default function Home() {
   useEffect(() => {
     console.log("Home page state value check : ", isAuthenticated);
   }, []);
->>>>>>> 469f70304c57b5a83af5b5db2dce0ea024e20623
   return (
     <div className="home">
       <Navbar2 />
