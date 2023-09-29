@@ -7,9 +7,9 @@ export default function Eventcard() {
   return (
     <div className="cd3" id='eventspg'>
         <div className="cd3Wrapper" data-aos="zoom-in">
-            {/* <div className="imgDiv"> */}
+            <div className="cd3imgDiv">
                 <img src={cd1} alt=""  className='cd3img'/>
-            {/* </div> */}
+            </div>
             <div className="cd3Text1">
                 <h2 className="cd3title">Maths Olympiad</h2>
                 <p className="cd3text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>

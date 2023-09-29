@@ -14,6 +14,7 @@ import "./Videos.css";
 
 export default function Videos() {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [videoCompleted, setVideoCompleted] = useState(false);
 
   const videoData = [
     {
@@ -51,22 +52,31 @@ export default function Videos() {
       title: "The Little Activist",
       image: vd3img,
       url: Video3,
-    }
+    },
   ];
 
   const handleVideoClick = (video) => {
     setSelectedVideo(video);
+    setVideoCompleted(false);
   };
 
   const closeModal = () => {
     setSelectedVideo(null);
+    setVideoCompleted(false);
+  };
+
+  const handleVideoEnd = () => {
+    console.log("first");
+    setVideoCompleted(true);
   };
 
   return (
     <div className="videoContainer">
       <Navbar2 />
       <div className="cdWrapper" id="vid-pg-cont">
-        <h2 className="homeTitle" id="md-title">Modules</h2>
+        <h2 className="homeTitle" id="md-title">
+          Modules
+        </h2>
         <div className="videoWrapper">
           {videoData.map((video) => (
             <div
@@ -84,11 +94,7 @@ export default function Videos() {
                 muted
                 autoPlay
               />
-              <img
-                src={video.image}
-                alt={video.title}
-                className="videoImg"
-              />
+              <img src={video.image} alt={video.title} className="videoImg" />
               <h3>{video.title}</h3>
             </div>
           ))}
@@ -100,13 +106,31 @@ export default function Videos() {
                   <span className="Y"></span>
                   <div className="close">Close</div>
                 </button>
-                <iframe
-                  width="800"
-                  height="500"
-                  src={selectedVideo.url}
-                  title={selectedVideo.title}
-                  allowFullScreen
-                />
+
+                {!videoCompleted && (
+                  <video
+                    width="800"
+                    height="500"
+                    src={selectedVideo.url}
+                    title={selectedVideo.title}
+                    allowFullScreen
+                    onEnded={handleVideoEnd}
+                    className="iframe"
+                    style={{ display: videoCompleted ? "none" : "block" }}
+                    autoPlay
+                  />
+                )}
+                {videoCompleted && (
+                  <div className="compltetd-video">
+                    <div className="compltetd-video-content">
+                      <h2>Video Completed!!</h2>
+                      <h2>CLICK ON THE BUTTON TO ATTEMPT THE QUIZ</h2>
+                      <button className="vd-btn">START QUIZ</button>
+                    </div>
+
+                    
+                  </div>
+                )}
               </div>
             </div>
           )}
