@@ -4,17 +4,17 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const ProtectRoutes = () => {
     const location = useLocation();
-    const {isAuthenticated, setIsAuthenticated} = useContext(AuthContext);
+    const obj = JSON.parse(localStorage.getItem('client'));
 
     useEffect(()=>{
-        console.log('Protect route state value check : ',isAuthenticated);
+        console.log('Protect route state value check : ',obj);
     }, []);
 
 
     return (
-        !isAuthenticated.auth
-            ? <Outlet />
-            : <Navigate  to='/' state={{from : location}} replace />
+        obj
+            ? <Navigate  to='/' state={{from : location}} replace />
+            : <Outlet />
     );
 }
 

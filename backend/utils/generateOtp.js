@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 
+require('dotenv').config();
+
 
 const generateOtp = () => {
     return Math.floor(1000 + Math.random()*9000).toString();
@@ -11,8 +13,8 @@ const sendOtp = async(email) => {
     const transporter = nodemailer.createTransport({
         service : 'Gmail',
         auth : {
-            user : "",
-            pass : ""
+            user : process.env.EMAIL,
+            pass : process.env.EMAIL_PASS,
         },
     });
 

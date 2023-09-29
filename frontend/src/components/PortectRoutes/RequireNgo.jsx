@@ -4,10 +4,14 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const RequireNgo = () => {
     const location = useLocation();
-    const {isAuthenticated} = useContext(AuthContext);
+    const obj = JSON.parse(localStorage.getItem('client'));
+
+    useEffect(() => {
+        console.log("Require ngo state value check : ", obj);
+    }, []);
 
     return (
-        isAuthenticated.role === 1 
+        obj && obj.role === 1 
             ? <Outlet /> 
             : <Navigate to='/ngologin' state={{from : location}} replace />
     );

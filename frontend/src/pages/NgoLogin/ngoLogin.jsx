@@ -50,7 +50,7 @@ const NgoLoginPage = () => {
     if (Object.keys(errors).length === 0) {
       try {
         const response = await login(1, loginForm);
-        console.log(response.data);
+        console.log(response);
 
         if (response.data.ngo) {
           console.log("authenticated successfully");
@@ -98,7 +98,7 @@ const NgoLoginPage = () => {
 
         <Row className="py-3">
           <Col>
-            New Customer <Link to="/register">Register</Link>
+            New Customer <Link to="/registerngo">Register</Link>
           </Col>
         </Row>
       </Form>
