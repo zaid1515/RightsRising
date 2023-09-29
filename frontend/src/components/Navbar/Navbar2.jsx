@@ -1,69 +1,74 @@
 import "./Navbar2.css";
 import { NavLink } from "react-router-dom";
-// import { AuthUserContext } from "../../context/AuthContext";
-// import { useContext } from "react";
-// import gameicon from "../../images/gameicon.svg"
 import img1 from "../../images/navbarimg.png";
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar2() {
-  // const { AuthUser, setAuthUser } = useContext(AuthUserContext);
+  const { i18n } = useTranslation();
 
-  // function Logout() {
-  //   setAuthUser(null);
-  // }
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
+  const { t } = useTranslation();
+
+
   return (
     <nav className="navbar2" id="mainnav">
       <img src={img1} alt="new" />
       <ul className="navbar-links ">
         <li>
-          <NavLink to="/">Home
-          <span></span><span></span><span></span><span></span></NavLink>
-          
+          <NavLink to="/">{t('home')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/courses">Courses
-          <span></span><span></span><span></span><span></span></NavLink>
-
+          <NavLink to="/courses">{t('courses')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/blogs">Blogs
-          <span></span><span></span><span></span><span></span></NavLink>
+          <NavLink to="/blogs">{t('blogs')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="https://kodey18.github.io/quiz-game/">Quiz
-          <span></span><span></span><span></span><span></span></NavLink>
+          <NavLink to="https://kodey18.github.io/quiz-game/">{t('quiz')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="https://kodey18.github.io/scramble-game/">Games
-          <span></span><span></span><span></span><span></span></NavLink>
+          <NavLink to="https://kodey18.github.io/scramble-game/">{t('games')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/event">Events
-          <span></span><span></span><span></span><span></span></NavLink>
+          <NavLink to="/event">{t('events')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/chat">Chat
-          <span></span><span></span><span></span><span></span></NavLink>
+          <NavLink to="/chat">{t('chat')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/userprofile">Profile
-          <span></span><span></span><span></span><span></span></NavLink>
+          <NavLink to="/userprofile">{t('profile')}
+            <span></span><span></span><span></span><span></span>
+          </NavLink>
         </li>
       </ul>
+      <button onClick={() => changeLanguage('en')}>english</button>
+      <button onClick={() => changeLanguage('hi')}>hindi</button>
       <div className="logoutDiv">
         <>
           <button className="lg-btn">
             <NavLink className="logout-btn" to={"/login"}>
-              LOGIN
+              {t('login')}
             </NavLink>
           </button>
         </>
       </div>
-
-      {/* <img src={img1} alt="" className="navbarimg" /> */}
-
-      {/* <br /> */}
-
     </nav>
   );
 }
