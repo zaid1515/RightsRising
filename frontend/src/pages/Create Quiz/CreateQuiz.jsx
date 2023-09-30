@@ -6,7 +6,7 @@ const CreateQuiz = () => {
     const [quizData, setQuizData] = useState({
         title: "",
         description: "",
-        questions: [],
+        questions: [{ questionText: '', options: ['', '', ''], correctOption: 0 }],
         expirationDate: "",
         createdBy: "",
     });
@@ -17,16 +17,41 @@ const CreateQuiz = () => {
     };
 
     const addQuestion = () => {
-        const newQuestions = [...quizData.questions, ""];
-        setQuizData({ ...quizData, questions: newQuestions });
+        const newQuestion = { questionText: '', options: ['', '', ''], correctOption: 0 };
+        setQuizData({ ...quizData, questions: [...quizData.questions, newQuestion] });
     };
 
-    const handleQuestionChange = (index, value) => {
-        const newQuestions = [...quizData.questions];
-        newQuestions[index] = value;
-        setQuizData({ ...quizData, questions: newQuestions });
+    const handleQuestionChange = (index, field, value) => {
+        const updatedQuestions = [...quizData.questions];
+        updatedQuestions[index][field] = value;
+        setQuizData({ ...quizData, questions: updatedQuestions });
     };
     
+    const handleCorrectOptionChange = (questionIndex, value) => {
+    const updatedQuestions = [...quizData.questions];
+    updatedQuestions[questionIndex].correctOption = value;
+    setQuizData({ ...quizData, questions: updatedQuestions });
+    };
+    
+    const handleOptionChange = (questionIndex, optionIndex, value) => {
+    const updatedQuestions = [...quizData.questions];
+    updatedQuestions[questionIndex].options[optionIndex] = value;
+    setQuizData({ ...quizData, questions: updatedQuestions });
+    };
+
+
+    // const handleOptionChange = (questionIndex, optionIndex, value) => {
+    // const updatedQuestions = [...quizData.questions];
+    // updatedQuestions[questionIndex].options[optionIndex] = value;
+    // setQuizData({ ...quizData, questions: updatedQuestions });
+    // };
+
+    // const handleCorrectOptionChange = (questionIndex, value) => {
+    // const updatedQuestions = [...quizData.questions];
+    // updatedQuestions[questionIndex].correctOption = value;
+    // setQuizData({ ...quizData, questions: updatedQuestions });
+    // };
+
     return (
         <div className="quiz-form">
             <h1>Create a Quiz</h1>
@@ -55,15 +80,53 @@ const CreateQuiz = () => {
             </div>
 
             <h2>Questions</h2>
-            {quizData.questions.map((question, index) => (
-                <div key={index} className="form-group">
+            {quizData.questions.map((question, questionIndex) => (
+                <div key={questionIndex} className="question-group">
                 <input
                     type="text"
-                    placeholder={`Enter question #${index + 1}`}
-                    value={question}
-                    onChange={(e) => handleQuestionChange(index, e.target.value)}
+                    placeholder={`Enter question #${questionIndex + 1}`}
+                    value={question.questionText}
+                    onChange={(e) =>
+                    handleQuestionChange(
+                        questionIndex,
+                        "questionText",
+                        e.target.value
+                    )
+                    }
                     required
                 />
+
+                <div className="options-group">
+                    {question.options.map((option, optionIndex) => (
+                    <div key={optionIndex} className="option-group">
+                        <input
+                        type="text"
+                        placeholder={`Option ${optionIndex + 1}`}
+                        value={option}
+                        onChange={(e) =>
+                            handleOptionChange(
+                            questionIndex,
+                            optionIndex,
+                            e.target.value
+                            )
+                        }
+                        required
+                        />
+                        <label>
+                        <input
+                            type="radio"
+                            name={`correctOption_${questionIndex}`}
+                            value={optionIndex}
+                            checked={question.correctOption === optionIndex}
+                            onChange={() =>
+                            handleCorrectOptionChange(questionIndex, optionIndex)
+                            }
+                        />
+                        Correct
+                        </label>
+                    </div>
+                    ))}
+                </div>
                 </div>
             ))}
             <button

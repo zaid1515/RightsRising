@@ -59,3 +59,32 @@
 .create-quiz-btn:hover {
   background-color: #1e7e34;
 }
+
+/* Option Groups */
+.options-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+/* Option Input Fields */
+.option-group input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/* Correct Option Labels */
+.option-group label {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+/* Correct Option Radio Buttons */
+.option-group input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
