@@ -62,6 +62,15 @@ export default function Navbar2() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/createquiz">
+                {t("Create Qiz")}
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/blogs">
                 {t("Blogs")}
                 <span></span>

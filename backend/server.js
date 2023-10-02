@@ -26,6 +26,7 @@ app.use('/', require('./Routes/homeRoutes'));
 app.use('/api/users', require('./Routes/userRoutes'));
 app.use('/api/ngo', require('./Routes/ngoRoutes'));
 app.use('/api/blogs', require('./Routes/blogsRoutes'));
+app.use('/api/quiz', require('./Routes/quizRoutes'));
 
 
 app.use(errorMiddleware.notFound);

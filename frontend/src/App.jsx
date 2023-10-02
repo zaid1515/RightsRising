@@ -9,7 +9,6 @@ import MissingPage from "./components/Missing Page/MissingPage";
 import RequireUser from "./components/PortectRoutes/RequireUser";
 import RequireNgo from "./components/PortectRoutes/RequireNgo";
 import NgoProfile from "./pages/Ngo Profile/NgoProfile";
-// import Blogs from "./pages/Blogs/Blogs";
 import Event from "./pages/Eventpg/Event";
 import RegisterPage from "./pages/login Page/RegsiterPage";
 import CreateBlog from "./pages/Create Blog/CreateBlog";
@@ -51,6 +50,7 @@ function App() {
           <Route exact path="/ngoprofile" element={<NgoProfile />} />
           <Route exact path="/createblog" element={<CreateBlog />} />
           <Route exact path="/blogs" element={<Blogs2 />} />
+          <Route exact path="/createquiz" element={<CreateQuiz />} />
         </Route>
 
         {/* User protect routes */}
