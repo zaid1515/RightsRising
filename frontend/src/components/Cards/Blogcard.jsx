@@ -3,10 +3,11 @@ import "./Blogcard.css";
 
 export default function Blogcard(props) {
   return (
-    <div className="cd2" data-aos="zoom-in" data-aos-duration="500">
+    <div id="blog-card-hm" className="cd2" data-aos="zoom-in" data-aos-duration="500">
       <div className="imgDiv">
         <img src={props.image} alt="home img" className="cdimg" />
       </div>
+      <div className="blog-home-title">{props.blogtitle}</div>
       <div className="heading">
         "Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever

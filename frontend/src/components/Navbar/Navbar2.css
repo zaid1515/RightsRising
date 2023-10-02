@@ -17,7 +17,7 @@
     color: rgba(50,126,94,255);
     align-items: center;
     justify-content:center;
-    font-family: Poppins, serif;
+    font-family: P'oppins', serif;
     font-weight: 400;
     margin: 0px;
     padding: 0px;
@@ -78,9 +78,25 @@ nav ul{
     border: none;
     outline: none;
     background-color: transparent;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    
+    background-color: #195A99;
+    color: white;
     padding: 10px;
     border-radius: 15px;
+}
+
+.lg-btn a{
+    color: white;
+}
+
+.lg-btn:hover{
+    
+    background-color: #65abf0;
+    color: black;
+}
+.lg-btn a:hover{
+    color: black;
 }
 
 .navbar-logo{
@@ -119,7 +135,7 @@ nav ul li {
     --c: rgb(143, 3, 143);
     color: var(--c);
 
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 
     text-align: center;
     position: relative;
@@ -194,3 +210,19 @@ nav ul li span:nth-child(4) {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+input[type="radio"] {
+    margin-right: 8px; 
+  }
+  
+  input[type="radio"] + label {
+    font-size: 16px;
+    color: #333;
+    margin-left: 4px;
+  }
+  
+  input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #007bff; 
+  }
+  

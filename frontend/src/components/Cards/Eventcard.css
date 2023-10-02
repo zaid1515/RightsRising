@@ -1,5 +1,5 @@
 .cd3{
-    width: 48%;
+    width: 98%;
 }
 .cd3Wrapper{
     display: flex;
@@ -9,14 +9,16 @@
     
     padding: 25px;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
  
-.cd3title{
+#eventspg .cd3title{
     background-color: rgb(248,225,210);
     width: max-content;
     padding: 5px;
     border-radius: 5px;
     color: rgb(242,76,46);
+    font-size: 18px;
 }
 
 .cd3imgDiv{
@@ -29,7 +31,7 @@
 }
 
 .date{
-    font-size: 70px;
+    font-size: 40px;
 }
 
 .dateDiv{
@@ -42,4 +44,18 @@
 
 .cd3Text1{
     font-size: larger;
+}
+#eventspg .btn{
+    margin-top: 80px;
+    /* padding: 0; */
+}
+#eventspg .btn .explore{
+    /* margin-top: 80px; */
+    padding: 0;
+}
+#eventspg .btn .explore:hover{
+    background-color: antiquewhite;
+    animation: none;
+    color: orange;
+    border: 2px solid orange;
 }

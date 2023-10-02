@@ -1,9 +1,10 @@
 .cd2{
     border-end-end-radius: 30px;
     border-top-left-radius: 30px;
-    background-color: antiquewhite;
+    background-color: rgb(255, 226, 185);
     width: 460px;
-    height: 500px;
+    transition: background-color 0.5s ease-out;
+    height: 550px;
 }
 
 .heading{
@@ -15,11 +16,23 @@
     border-top-left-radius: 30px;
     height: 280px;
     width: 420px;
+
     /* max-width: 100%; */
 }
 
+#blog-card-hm .cdimg{
+    border: 3px solid white;
+}
 .cd2:hover{
-    border-end-end-radius: 30px;
-    border-top-left-radius: 30px;
-    background-color: rgb(226, 180, 120);
+    background-color: #dc6013;
+    color: white;
+}
+.author{
+    margin-top: 14px;
+}
+.blog-home-title{
+    margin: 14px;
+    font-weight: bold;
+    font-size: large;
+    text-transform: capitalize;
 }

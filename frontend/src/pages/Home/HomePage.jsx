@@ -108,19 +108,19 @@ export default function Home() {
 {/* activites section */}
 <section className="homeSection4">
   <div className="cdWrapper">
-    <h1 className="homeTitle">{t('homepg.ourActivities')}</h1>
+    <h1 className="homeTitle">{t('homepg.ourFeatures')}</h1>
     <div className="cdWrapper2">
       <div className="col1">
-        <NavLink className="logout-btn" to={"/login"}>
+        <NavLink className="logout-btn" to={"/blogs"}>
           <div className="cd4" data-aos="zoom-in">
-            <h2 className="cd3title">{t('homepg.learningModules')}</h2>
-            <p>{t('homepg.learningModulesDescription')}</p>
+            <h2 className="cd3title">{t('homepg.QuizCompetition')}</h2>
+            <p>{t('homepg.QuizCompetitionDescription')}</p>
           </div>
         </NavLink>
-        <NavLink className="logout-btn" to={"/login"}>
+        <NavLink className="logout-btn" to={"/events"}>
           <div className="cd4" data-aos="zoom-in">
-            <h2 className="cd3title">{t('homepg.games')}</h2>
-            <p>{t('homepg.gamesDescription')}</p>
+            <h2 className="cd3title">{t('homepg.EventsParticipation')}</h2>
+            <p>{t('homepg.EventsParticipationDescription')}</p>
           </div>
         </NavLink>
       </div>
@@ -128,16 +128,16 @@ export default function Home() {
         <img src={home3} alt="home img" className="homeimg3" />
       </div>
       <div className="col3">
-        <NavLink className="logout-btn" to={"/event"}>
+        <NavLink className="logout-btn" to={"/communnity"}>
           <div className="cd4" data-aos="zoom-in">
-            <h2 className="cd3title">{t('homepg.specialEvents')}</h2>
-            <p>{t('homepg.specialEventsDescription')}</p>
+            <h2 className="cd3title">{t('homepg.Community')}</h2>
+            <p>{t('homepg.CommunityDescription')}</p>
           </div>
         </NavLink>
-        <NavLink className="logout-btn" to={"/login"}>
+        <NavLink className="logout-btn" to={"/"}>
           <div className="cd4" data-aos="zoom-in">
-            <h2 className="cd3title">{t('homepg.quizes')}</h2>
-            <p>{t('homepg.quizesDescription')}</p>
+            <h2 className="cd3title">{t('homepg.RewardsandPrizes')}</h2>
+            <p>{t('homepg.RewardsandPrizesDescription')}</p>
           </div>
         </NavLink>
       </div>
@@ -150,9 +150,9 @@ export default function Home() {
           <div className="cdWrapper">
             <h1 className="homeTitle">Blogs</h1>
             <div className="cdWrapper2">
-              <Blogcard image={Person2} name={"Priya"} />
-              <Blogcard image={Person1} name={"Vighnesh"} />
-              <Blogcard image={Person3} name={"Abuzaid"} />
+              <Blogcard image={Person2} name={"Priya"} blogtitle="End Child Labour"/>
+              <Blogcard image={Person1} name={"Vighnesh"} blogtitle="Young Child's Bravery"/>
+              <Blogcard image={Person3} name={"Abuzaid"} blogtitle="Child Law Amendment"/>
             </div>
           </div>
         </section>

@@ -13,6 +13,7 @@ const resources = {
         playLearnAdvocate: 'Play, Learn, and Advocate.',
         empoweringKids: 'Empowering Kids for a Just Tomorrow!',
         startLearning: 'Start Learning',
+        ourFeatures: 'Our Features',
         ourActivities: 'Our Activities',
         challenges: 'Challenges',
         challengesDescription: 'Word Scramble, Quiz, Memory-Game and others',
@@ -27,30 +28,15 @@ const resources = {
         missionDescription: `
         Our platform's mission is to transform the learning experience for children aged 8-16 by combining the power of gamification with a profound exploration of child rights. Through interactive gameplay, we invite children into a captivating world where they can discover, understand, and appreciate the importance of their own rights. We're on a quest to raise awareness about these fundamental rights, providing an immersive journey that not only educates but also inspires action and advocacy. Together, we're building a world where young minds are empowered to shape a fair and just society.`,
         activities: 'Activities',
-        learningModules: 'Learning Modules',
-        learningModulesDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Aliquid molestias dolores dolore dicta. Enim voluptatum
-      quam vero tempora laboriosam aut ratione sint architecto.
-      Excepturi facilis molestias numquam reiciendis? Quisquam,
-      ipsum.`,
-        gamesActivity: 'Games',
-        gamesActivityDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Aliquid molestias dolores dolore dicta. Enim voluptatum
-      quam vero tempora laboriosam aut ratione sint architecto.
-      Excepturi facilis molestias numquam reiciendis? Quisquam,
-      ipsum.`,
-        specialEvents: 'Special Events',
-        specialEventsDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Aliquid molestias dolores dolore dicta. Enim voluptatum
-      quam vero tempora laboriosam aut ratione sint architecto.
-      Excepturi facilis molestias numquam reiciendis? Quisquam,
-      ipsum.`,
-        quizzes: 'Quizzes',
-        quizesDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Aliquid molestias dolores dolore dicta. Enim voluptatum
-      quam vero tempora laboriosam aut ratione sint architecto.
-      Excepturi facilis molestias numquam reiciendis? Quisquam,
-      ipsum.`,
+        QuizCompetition: 'Quiz Competition',
+        QuizCompetitionDescription: `Quiz Competitions are conducted weekly where questions relate with several child rights and legal procedures. All users can participate in it at the same time and compete with others`,
+        BlogsandNewsDescription: `Experts and NGOs talk about real-life incidents about brave children and share other latest happenings in the field of child rights and other legal procedures all over the world. Children can gain knowledge and be more updated about the events which took place`,
+        EventsParticipation: 'Participate in Events',
+        EventsParticipationDescription: `Children can participate in events and competitions for organised by the NGOs and other organizations. They can gain real-life experiences along with the virtual one`,
+        RewardsandPrizes: 'Rewards and Prizes',
+        RewardsandPrizesDescription: `Children get rewards on maintaining streak on watching modules. They also get prizes when they top the ;leaderboard of weekly quizzes`,
+        Community: 'Connect with Peers',
+        CommunityDescription: `A chat section for all the children users to interact with each other , share their interests , hobbies and experiences. They can have a good time through talking to the fellow users.`,
         blogs: 'Blogs',
         experts: 'Experts',
       }
@@ -74,17 +60,17 @@ const resources = {
       course2: 'कोर्स 2',
       course3: 'कोर्स 3',
       course4: 'कोर्स 4',
-      home: "होम",
-      courses: "कोर्सेज",
-      blogs: "ब्लॉग्स",
-      quiz: "प्रश्नोत्तरी",
-      games: "खेल",
-      events: "घटनाएँ",
-      chat: "चैट",
-      profile: "प्रोफाइल",
+      Home: "होम",
+      Modules: "कोर्सेज",
+      Blogs: "ब्लॉग्स",
+      Challenges: "प्रश्नोत्तरी",
+      Games: "खेल",
+      Events: "घटनाएँ",
+      Chat: "चैट",
+      Profile: "प्रोफाइल",
       english: "अंग्रेज़ी",
       hindi: "हिंदी",
-      login: "लॉग इन",
+      Login: "लॉग इन",
       homepg: {
         playLearnAdvocate: 'खेलें, सीखें और समर्थन करें।',
         empoweringKids: 'एक न्यायिक भविष्य के लिए बच्चों को सशक्त करना!',
@@ -104,7 +90,7 @@ const resources = {
         learningModules: 'शिक्षाओं के मॉड्यूल',
         learningModulesDescription: ' लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। ',
         specialEvents: 'विशेष घटनाएँ',
-        specialEventsDescription:' लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। ',
+        specialEventsDescription: ' लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। ',
         quizes: 'प्रश्नोत्तरी',
         quizesDescription: ' लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है।  लोरेम इप्सम यह केवल टाइपसेटिंग उद्योग का डमी टेक्स्ट है। '
       }

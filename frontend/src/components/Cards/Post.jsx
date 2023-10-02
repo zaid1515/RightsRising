@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import Img1 from "../../images/cd1.jpg"
+import Img1 from "../../images/modbg2.jpg"
 import "./Post.css";
 
 export default function Post(props) {
@@ -43,21 +43,25 @@ export default function Post(props) {
           <div className="postUser">
             {/* <Person /> */}
             <h3 className="postName" >
-              {props.name}
+              {props.title}
             </h3>
           </div>
           {/* <span className="postTime">mins ago</span> */}
         </div>
         <hr></hr>
         <div className="postContent">
-          
+        <h3 className="postName" >
+              {props.name}
+            </h3>
+          <div className="imageDiv">
+          <img src={Img1} alt="" className="postImg" />
           <article className="postText">{props.text}</article>
-          {/* <div className="imageDiv">
-          <img src={Img1} alt="" className="postImg" />
           <br></br>
-          <img src={Img1} alt="" className="postImg" />
-          </div> */}
+          
+          </div>
+          
         </div>
+        
         <hr></hr>
         <div className="postBottom">
           <div className="postBottomleft">

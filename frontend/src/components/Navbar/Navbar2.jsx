@@ -8,31 +8,31 @@ import { useTranslation } from 'react-i18next';
 
 export default function Navbar2() {
 
-    const { i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
-    const changeLanguage = (language) => {
-      i18n.changeLanguage(language);
-    };
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const obj = JSON.parse(localStorage.getItem('client'));
-  const {logout} = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handlelogout = async(e) => {
+  const handlelogout = async (e) => {
     e.preventDefault();
 
-    try{
+    try {
       const response = await logout();
 
-      if(response){
-        console.log("logged out : ",response.data);
+      if (response) {
+        console.log("logged out : ", response.data);
         navigate('/userlogin');
       }
 
-    } catch(error){
-      console.log("error after logout : ",error);
+    } catch (error) {
+      console.log("error after logout : ", error);
     }
   }
 
@@ -43,7 +43,7 @@ export default function Navbar2() {
       <ul className="navbar-links ">
         <li>
           <NavLink to="/">
-            {t("home")}
+            {t("Home")}
             <span></span>
             <span></span>
             <span></span>
@@ -54,7 +54,7 @@ export default function Navbar2() {
           <>
             <li>
               <NavLink to="/createblog">
-                {t("create blog")}
+                {t("Create Blog")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -63,7 +63,7 @@ export default function Navbar2() {
             </li>
             <li>
               <NavLink to="/blogs">
-                {t("blogs")}
+                {t("Blogs")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -75,7 +75,7 @@ export default function Navbar2() {
           <>
             <li>
               <NavLink to="/modules">
-                {t("modules")}
+                {t("Modules")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -83,8 +83,8 @@ export default function Navbar2() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blogs">
-                {t("blogs")}
+              <NavLink to="/Blogs">
+                {t("Blogs")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -93,7 +93,7 @@ export default function Navbar2() {
             </li>
             <li>
               <NavLink to="https://kodey18.github.io/quiz-game/">
-                {t("quiz")}
+                {t("Challenges")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -103,7 +103,7 @@ export default function Navbar2() {
             <li>
               {/* https://kodey18.github.io/scramble-game/ */}
               <NavLink to="/games">
-                {t("games")}
+                {t("Games")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -112,7 +112,7 @@ export default function Navbar2() {
             </li>
             <li>
               <NavLink to="/events">
-                {t("events")}
+                {t("Events")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -121,7 +121,7 @@ export default function Navbar2() {
             </li>
             <li>
               <NavLink to="/chat">
-                {t("chat")}
+                {t("Chat")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -130,7 +130,7 @@ export default function Navbar2() {
             </li>
             <li>
               <NavLink to="/userprofile">
-                {t("profile")}
+                {t("Profile")}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -168,10 +168,10 @@ export default function Navbar2() {
         ) : (
           <button className="lg-btn">
             <NavLink className="logout-btn" to="/userlogin">
-              Login
+
             </NavLink>
             <NavLink className="logout-btn" to={"/login"}>
-              {t("login")}
+              {t("Login")}
             </NavLink>
           </button>
         )}

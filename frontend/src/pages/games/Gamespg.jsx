@@ -5,6 +5,7 @@ import Gamecard from "../../components/Cards/Gamecard";
 export default function Gamespg() {
   return (
     <div className="gamesContainer">
+      {/* <h1 className="homeTitle">Challenges</h1> */}
       <div className="gamesWrapper">
         <div className="gamecards">
           <div className="gridWrapper">

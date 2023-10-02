@@ -8,10 +8,16 @@
 
 .postWrapper{
     padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    width: 130%;
 }
 
-.postImg{
-    border-radius: 20px;
+.post img{
+    /* border-radius: 80px; */
+    height: 150px;
+    /* border: 3px orange solid; */
+    padding:0px 30px;
 }
 
 
@@ -47,5 +53,10 @@
 
 .postUser{
     align-items: center;
+    display: flex;
+}
+
+.post .imageDiv{
+    /* height: 0; */
     display: flex;
 }

@@ -1,12 +1,14 @@
 import "./Leaderboard.css";
 import Person1 from "../../images/person1.jpg";
+import Person2 from "../../images/person2.jpg";
+import Person3 from "../../images/person3.jpg";
 
 export default function Leaderboard() {
   const players = [
     { name: "Vighnesh ", points: 100 },
     { name: "John ", points: 75 },
     { name: "Jane ", points: 90 },
-    { name: "Michael ", points: 97 },
+    { name: "Priya ", points: 97 },
     { name: "Emily ", points: 80 },
     { name: "Chris ", points: 95 },
     { name: "Sarah W", points: 85 },
@@ -27,7 +29,7 @@ export default function Leaderboard() {
             
             <h1>{sortedPlayers[1].name}</h1>
             <div className="imgDiv">
-              <img src={Person1} alt="" className="ldImage" />
+              <img src={Person2} alt="" className="ldImage" />
             </div>
             <div className="second">
               <p className="points">
@@ -39,7 +41,7 @@ export default function Leaderboard() {
           <div className="top3">
             <h1>{sortedPlayers[0].name}</h1>
             <div className="imgDiv">
-              <img src={Person1} alt="" className="ldImage" />
+              <img src={Person3} alt="" className="ldImage" />
             </div>
             <div className="first">
               <p className="points">

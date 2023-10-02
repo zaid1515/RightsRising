@@ -19,6 +19,8 @@ import Gamespg from "./pages/games/Gamespg";
 import Videos from "./pages/Videospg/Videos";
 import Blogs2 from "./pages/Blogs2/Blog2";
 import Leaderboard from "./pages/Leaderboard/Leaderboard";
+import Webinar from './pages/Webinar/Webinar'
+
 
 function App() {
   return (
@@ -33,6 +35,15 @@ function App() {
           <Route exact path="/userlogin" element={<LoginPage />} />
           <Route exact path="/ngoregister" element={<NgoRegister />} />
           <Route exact path="/ngoLogin" element={<NgoLogin />} />
+          
+          <Route exact path="/userprofile" element={<ProfilePage />} />
+          <Route exact path="/modules" element={<Videos />} />
+          <Route exact path="/events" element={<Event />} />
+          <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/games" element={<Gamespg />} />
+          <Route exact path="/blogs" element={<Blogs2 />} />
+          <Route exact path="/leaderboard" element={<Leaderboard />} />
+          <Route exact path="/webinar" element={<Webinar />} />
         </Route>
 
         {/* Ngo protect routes */}
@@ -44,13 +55,6 @@ function App() {
 
         {/* User protect routes */}
         <Route element={<RequireUser />}>
-          <Route exact path="/userprofile" element={<ProfilePage />} />
-          <Route exact path="/modules" element={<Videos />} />
-          <Route exact path="/events" element={<Event />} />
-          <Route exact path="/chat" element={<Chat />} />
-          <Route exact path="/games" element={<Gamespg />} />
-          <Route exact path="/blogs" element={<Blogs2 />} />
-          <Route exact path="/leaderboard" element={<Leaderboard />} />
         </Route>
 
         {/* catch all other undefined routes */}

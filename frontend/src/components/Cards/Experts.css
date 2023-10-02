@@ -52,9 +52,12 @@
     opacity: 1;
     border-radius: 15px;
     object-fit: cover;
+    overflow: hidden;
+    /* padding: 80px 40px; */
     position: relative;
   }
-  
+
+ 
   .card7:hover .first-content {
     height: 0px;
     opacity: 0;
@@ -70,6 +73,7 @@
     border-radius: 30px;
     transition: all 0.6s;
     font-size: 0px;
+    overflow: hidden;
   }
   
   .card7:hover .second-content {
@@ -139,4 +143,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 120px  0px;
   }

@@ -17,6 +17,7 @@ export default function Webinar() {
       <div className="wbWrapper">
         <div className="wbcol1">
           <div className="wbimgDiv">
+            <img src={img2} alt="" />
           <h2>Anton Georege</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolores
