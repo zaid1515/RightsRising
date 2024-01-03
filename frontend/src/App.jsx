@@ -50,7 +50,6 @@ function App() {
           <Route exact path="/ngoprofile" element={<NgoProfile />} />
           <Route exact path="/createblog" element={<CreateBlog />} />
           <Route exact path="/blogs" element={<Blogs2 />} />
-          <Route exact path="/createquiz" element={<CreateQuiz />} />
         </Route>
 
         {/* User protect routes */}
